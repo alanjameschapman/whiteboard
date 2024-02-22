@@ -2,13 +2,13 @@
 Learning platform for teachers to post topic notes, tutorials and tests. Students can comment (ask questions) and teacher moderates.
 Topics can be tagged with skills. Results can be filtered by tags.
 Please use GitHub's burger bun top left for auto-generated Table of Contents
+
 # Agile Development
 This project was developed using agile principles. The project took 4 weeks and was divide up into weekly iterations/timeboxes, which roughly coincided with scheduled mentor sessions. In this way, development was iterative and incremental. The Minimum Viable Product was deployed after the first iteration for mentor and peer feedback.
 Story Points were assigned to tasks at the start of the project, and after deployment of the MVP a velocity could be calculated from the number of story points completed within that week. In this way, the remaining work could be better prioritized.
 
-Product Backlog Issues (PBI's)
-
-- User stories and bugs are managed and refined using GitHub's built-in Project functionality. Milestones are used to create the iterations/timeboxes.
+- Product Backlog Issues (PBI's) are categorised and labelled as user stories or bugs.
+- PBI's are managed and refined using GitHub's built-in Project functionality. Milestones are used to create the iterations/timeboxes.
 - Each iteration aimed to have no more than 60% Must-Haves, 20% Should-haves, and 20% Could-haves.
 - User Stories were designated with Story Points, which are relative measures of how much work is required to complete a chunk of work.
 - Story Point values conform to the Fibonacci sequence i.e. 1, 2, 3, 5 and 8. Anything larger was broken down into smaller chunks.
