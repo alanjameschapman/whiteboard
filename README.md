@@ -201,4 +201,4 @@ You can fork this repository by using the following steps:
 - Code Institute Django blog walkthrough
 - [PP4 - MVP & Community Walkthrough](https://app.box.com/s/s6xkp4gp3d9orwkp9fp4ep0igdcwsjm7)
 - Principles of Agile Development, Code Institute LMS
-- [Practical Fibonacci](https://www.scrum.org/resources/blog/practical-fibonacci-beginners-guide-relative-sizing)
+- [Scalable Path](https://www.scalablepath.com/project-management/agile-points-fibonacci-sequence) for How to Use the Fibonacci Scale to Estimate Story Points.
