@@ -43,7 +43,7 @@ Wireframes, colour schemes, user flow chart go here
 ## Manual Testing
 Tables and screenshots of user story testing
 
-Tables and screenshots of feature testing - Feature, Action and Effect.
+Tables and screenshots of feature testing - Feature, Action and Effect. Expected outcome vs actual outcome.
 
 ### Responsiveness
 Use extension to show screens from each page at each iteration.
