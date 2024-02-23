@@ -7,7 +7,7 @@ assignees: alanjameschapman
 
 ---
 
-As a **role** I can **capability** so that I can **received benefit**.
+As a **role** I can **capability** so that I can **benefit**.
 
 **Acceptance Criteria**
 - [ ] AC 1
