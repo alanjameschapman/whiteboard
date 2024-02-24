@@ -13,10 +13,21 @@ Story Points were assigned to tasks at the start of the project, and after deplo
 - User Stories were designated with Story Points, which are relative measures of how much work is required to complete a chunk of work.
 - Story Point values conform to the Fibonacci sequence i.e. 1, 2, 3, 5 and 8. Anything larger was broken down into smaller chunks.
 
-## Iteration 1
+## Sprint 1 - ends with Mentor Session 1 (Project Planning)
 
-## Iteration 2
-## Iteration 3
+
+## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
+
+
+
+## Sprint 3 - ends with Mentor Session 3 (Final Project Review)
+
+
+
+## Sprint 4 - ends with Submit Full Stack Toolkit Portfolio Project
+
+
+
 # User Experience Design
 Wireframes, colour schemes, user flow chart go here
 # Features
