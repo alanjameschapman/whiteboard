@@ -13,8 +13,11 @@ Story Points were assigned to tasks at the start of the project, and after deplo
 - User Stories were designated with Story Points, which are relative measures of how much work is required to complete a chunk of work.
 - Story Point values conform to the Fibonacci sequence i.e. 1, 2, 3, 5 and 8. Anything larger was broken down into smaller chunks.
 
-## Sprint 1 - ends with Mentor Session 1 (Project Planning)
+## Sprint 1
 
+Having created all user stories and added them to the backlog, I prioritized planning and admin tasks using MoSCoW categorization as follows:
+
+![sprint1](docs/sprints/sprint1.png)
 
 ## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
 
