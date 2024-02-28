@@ -36,7 +36,7 @@ Testing of interface and navigation has been [documented](docs/TESTING.md).
 
 ## Surface
 
-Colour schemes, go HERE.
+Colour schemes, fonts go HERE.
 
 # Features
 ## Implemented
