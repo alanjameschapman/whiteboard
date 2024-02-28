@@ -16,9 +16,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from hello_world import views as index_views
+from edblog import views as index_views
 
 urlpatterns = [
-    path('hello/', index_views.home),
+    path('edblog/', index_views.home),
     path('admin/', admin.site.urls),
 ]
