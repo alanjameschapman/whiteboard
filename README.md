@@ -6,8 +6,38 @@ Please use GitHub's burger bun top left for auto-generated Table of Contents
 # Agile Development
 This project was developed and [documented](docs/AGILE.md) using Agile principles.
 
-# User Experience Design
-Wireframes, colour schemes, user flow chart go here
+# 5 planes of User Experience
+The project was planned using the five planes of User Experience:
+
+![UX5planes](/docs/UX5planes.png)
+
+## Strategy
+
+User are divided into three main groups:
+- Student: to learn using the website by accessing relevant content according to their teacher and class.
+- Teacher: to teach using website by posting topic notes.
+- Superuser: to set up schools, subjects and classes.
+
+Their needs are defined and managed as user stories via GitHub Projects.
+
+## Scope
+
+Functional and content requirements HERE.
+
+## Structure
+
+User flow chart, ERD
+
+## Skeleton
+
+Wireframes HERE.
+
+Testing of interface and navigation has been [documented](docs/TESTING.md).
+
+## Surface
+
+Colour schemes, go HERE.
+
 # Features
 ## Implemented
 - “if comment.author == request.user:” in view is used to check at the back-end for authorship.
@@ -39,8 +69,9 @@ Manual and automated testing was completed and [documented](docs/TESTING.md) thr
 [Instructions](docs/DEPLOYMENT.md) are provided for deployment, forking and cloning.
 
 # References
-- PP4 MVP YouTube video.
-- Code Institute Django blog walkthrough
-- [PP4 - MVP & Community Walkthrough](https://app.box.com/s/s6xkp4gp3d9orwkp9fp4ep0igdcwsjm7)
+- [Portfolio Project 4: The guide to MVP](https://www.youtube.com/watch?v=vIv1c6RLBac), Code Institute LMS
+- [PP4 - MVP & Community Walkthrough](https://app.box.com/s/s6xkp4gp3d9orwkp9fp4ep0igdcwsjm7), Code Institute LMS
+- Django blog walkthrough, Code Institute LMS
 - Principles of Agile Development, Code Institute LMS
-- [Scalable Path](https://www.scalablepath.com/project-management/agile-points-fibonacci-sequence) for How to Use the Fibonacci Scale to Estimate Story Points.
+- [The five elements of UX design & their common pitfalls](https://despark.com/blog/five-elements-ux-design-common-pitfalls), Despark.
+- [How to Use the Fibonacci Scale to Estimate Story Points](https://www.scalablepath.com/project-management/agile-points-fibonacci-sequence), Scalable Path
