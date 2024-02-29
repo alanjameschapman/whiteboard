@@ -30,7 +30,7 @@ User flow chart, ERD
 
 ## Skeleton
 
-Wireframes HERE.
+![wireframes](/docs/wireframes/wireframes-user-journey.png)
 
 Testing of interface and navigation has been [documented](docs/TESTING.md).
 
