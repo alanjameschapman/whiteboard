@@ -26,7 +26,27 @@ Functional and content requirements HERE.
 
 ## Structure
 
-User flow chart, ERD
+The following Entity Relationship Diagram (ERD) describes how the database models will relate to each other.
+
+![ERD](/docs/ERD/whiteboard_ERD.png)
+
+**One-to-many relationships:**
+
+- A School has many Teachers, Students, and Sets.
+- A Teacher teaches many Sets.
+- A Subject is offered within many Sets.
+- A Blog can have many Comments.
+
+**Many-to-many relationships:**
+
+- Students enroll in many Sets, and Sets have many Students (represented by the Enrollment entity).
+- Comments can be made by either Students or Teachers on a Blog.
+
+Note that for now a grade_level attribute has been included in the Student entity in the event that the Homework functionality is implemented. 
+
+Some site navigation is shown in the wireframes, but 
+
+User flow chart HERE
 
 ## Skeleton
 
