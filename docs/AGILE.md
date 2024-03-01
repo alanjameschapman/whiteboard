@@ -21,14 +21,23 @@ Having created all user stories and added them to the backlog, I prioritized pla
 
 The Kanban was tailored to visualise work in progress and to be 
 
-![sprint1](/docs/sprints/sprint1_kanban.png)
+![sprint1_plan](/docs/sprints/sprint1_plan.png)
 
-At the end of sprint 1 it was calculated that over X hours of work, I completed Y user story points, giving a velocity of Y/X pts/hr.
+At the end of sprint 1 it was calculated that over 20 hours of work, 6 user story points were completed, giving a velocity of 6/20 = 0.3 pts/hr.
 
-This was used to helkp me plan workload going forward.
+![sprint1_complete](/docs/sprints/sprint1_complete.png)
+
+It was established that the story points for sprint 1 issues were underestimated.
+
+It was discussed at the mentor meeting that it would still be valuable to create a detailed user flow diagram but this could be deprioritized, as there was enough information on the wireframes to help build the project. Story points reduced from 2 to 1 due to some of the tasks within [user story #13](https://github.com/alanjameschapman/whiteboard/issues/13) being completed.
 
 ## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
 
+Sprint 2 focused on creating a Minimum Viable Product for deployment on due date, where all merit criteria would be met. All user stories required for the MVP were added to this sprint.
+
+![sprint2_plan](/docs/sprints/sprint2_plan.png)
+
+Based on time taken for the django blog walkthrough, it was anticipated that these issues could be accomplished within the timebox.
 
 ## Sprint 3 - ends with Mentor Session 3 (Final Project Review)
 
