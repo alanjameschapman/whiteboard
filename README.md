@@ -13,6 +13,10 @@ The project was planned using the five planes of User Experience:
 
 ## Strategy
 
+In the author's experience (as a former Science teacher) classrooms can be hectic environments. There is a lot of content to cover, and limited time to learn it. Whilst teachers do their best to address the misconceptions and questions of every student in the class, it is inevitable that some may still leave the room with unanswered questions.
+
+This platform seeks to provide the teacher a means to address these questions, clarify lesson content, and provide teachers the ability to give further reading or perhaps set homework.
+
 User are divided into three main groups:
 - Student: to learn using the website by accessing relevant content according to their teacher and class.
 - Teacher: to teach using website by posting topic notes.
@@ -23,6 +27,8 @@ Their needs are defined and managed as user stories via GitHub Projects.
 ## Scope
 
 Functional and content requirements HERE.
+
+The dominant platform in educational blogs is [edublogs](https://edublogs.org/). 
 
 ## Structure
 
