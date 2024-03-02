@@ -31,6 +31,9 @@ It was established that the story points for sprint 1 issues were underestimated
 
 It was discussed at the mentor meeting that it would still be valuable to create a detailed user flow diagram but this could be deprioritized, as there was enough information on the wireframes to help build the project. Story points reduced from 2 to 1 due to some of the tasks within [user story #13](https://github.com/alanjameschapman/whiteboard/issues/13) being completed.
 
+### Minutes from Mentor Meeting 1
+
+
 ## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
 
 Sprint 2 focused on creating a Minimum Viable Product for deployment on due date, where all merit criteria would be met. All user stories required for the MVP were added to this sprint.
