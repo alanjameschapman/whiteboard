@@ -13,12 +13,13 @@ The project was planned using the five planes of User Experience:
 
 ## Strategy
 
-In the author's experience (as a former Science teacher) classrooms can be hectic environments. There is a lot of content to cover, and limited time to learn it. Whilst teachers do their best to address the misconceptions and questions of every student in the class, it is inevitable that some may still leave the room with unanswered questions.
+In the author's experience (as a former Science teacher) classrooms can be hectic environments! There is a lot of content to cover, and limited time to learn it. Whilst teachers do their best to address misconceptions and questions of every student in the class, it is inevitable that some students may still leave the room with unanswered questions.
 
-This platform seeks to provide the teacher a means to address these questions, clarify lesson content, and provide teachers the ability to give further reading or perhaps set homework.
+The goals this platform seeks to achieve are two-fold:
+- For the TEACHER to provide topic content, address student questions, and hopefully set quizzes.
+- For the STUDENT to access relevant content (according to their teacher and class), and improve their understanding by asking questions (via comments) and completing quizzes.
 
 User are divided into three main groups:
-- Student: to learn using the website by accessing relevant content according to their teacher and class.
 - Teacher: to teach using website by posting topic notes.
 - Superuser: to set up schools, subjects and classes.
 
@@ -26,9 +27,11 @@ Their needs are defined and managed as user stories via GitHub Projects.
 
 ## Scope
 
-Functional and content requirements HERE.
+Following an initial brainstorm of desired and possible functionality, a set of user stories was tabulated. These were grouped into Epics and Themes for Agile purposes,  categorized using MoSCoW, and allocated Story Points. By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
-The dominant platform in educational blogs is [edublogs](https://edublogs.org/). 
+![MVP](/docs/MVP.png)
+
+A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features . 
 
 ## Structure
 
