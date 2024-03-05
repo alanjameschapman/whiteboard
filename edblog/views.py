@@ -1,12 +1,12 @@
 """
 Views for the :model:`edblog.Post` and :model:`edblog.Comment` models.
 """
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from django.contrib import messages
 from django.http import HttpResponseRedirect
 from .models import Post, Comment
-from .forms import CommentForm
+from .forms import CommentForm, PostForm
 
 
 # Create your views here.
@@ -133,3 +133,23 @@ def comment_delete(request, slug, comment_id):
                              'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+def create_post(request):
+    """
+    Create a new :model:`edblog.Post`.
+
+    **Context**
+
+    ``post_form``
+        An instance of :form:`edblog.PostForm`.
+    """
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)  # Don't save the form to the database yet
+            post.author = request.user  # Set the author field to the current user
+            post.save()  # Now save the form to the database
+            return redirect('home')
+    else:
+        form = PostForm()
+    return render(request, 'edblog/create_post.html', {'form': form})
