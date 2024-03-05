@@ -14,8 +14,12 @@ Use extension to show screens from each page at each iteration.
 - Iteration 2
 - Iteration 3
 ### Bugs
-Problem -> solution. Include screenshots.
 #### Resolved
+
+| # | Problem | Screenshot | Solution | Screenshot |
+| --- | --- | --- | --- | --- |
+| [#29](https://github.com/alanjameschapman/whiteboard/issues/29) | Edit button not populating comment box for editing | [#29](/docs/issues/29-1.png) | Javascript amended from "id_body" to "id_content | [#29](/docs/issues/29-2.png) |
+
 #### Unresolved
 ### Lighthouse
 WAVE and Web Disability Simulator. Disable extensions if they interfere. incognito mode?

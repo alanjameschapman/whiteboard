@@ -101,6 +101,7 @@ Manual and automated testing was completed and [documented](docs/TESTING.md) thr
 # References
 - [Portfolio Project 4: The guide to MVP](https://www.youtube.com/watch?v=vIv1c6RLBac), Code Institute LMS
 - [PP4 - MVP & Community Walkthrough](https://app.box.com/s/s6xkp4gp3d9orwkp9fp4ep0igdcwsjm7), Code Institute LMS
+- [ChatGPT](https://chat.openai.com/) for generating fixtures content during development.
 - Django blog walkthrough, Code Institute LMS
 - Principles of Agile Development, Code Institute LMS
 - [The five elements of UX design & their common pitfalls](https://despark.com/blog/five-elements-ux-design-common-pitfalls), Despark.

@@ -34,37 +34,29 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">whiteboard</span></a>
+            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">whiteboard</span></span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarText">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    {% if user.is_authenticated %}
                     <li class="nav-item">
-                        <a class="nav-link {% if request.path == home_url %}active" aria-current="page{% endif %}"
-                            href="{% url 'home' %}">Home</a>
+                        <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'account_logout' %}">Logout</a>
                     </li>
-
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'account_signup' %}">Register</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
+                            href="{% url 'account_login' %}">Login</a>
+                    </li>
+                    {% endif %}
                 </ul>
-                {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == logout_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_logout' %}">Logout</a>
-                </li>
-                {% else %}
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == signup_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_signup' %}">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link {% if request.path == login_url %}active" aria-current="page{% endif %}"
-                        href="{% url 'account_login' %}">Login</a>
-                </li>
-                {% endif %}
-                <span class="navbar-text text-muted">
-                    where learning happens
-                </span>
             </div>
         </div>
     </nav>
@@ -108,8 +100,8 @@
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
         </script>
 
-{% block extras %}
-{% endblock %}
+    {% block extras %}
+    {% endblock %}
 
 </body>
 
