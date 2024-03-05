@@ -78,15 +78,16 @@ Colour schemes, fonts go HERE.
 ## Not implemented yet...
 
 # Technologies
-- [Django](https://www.djangoproject.com/) is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
-- [JavaScript](https://www.javascript.com/) is a programming language that adds interactivity to your website.
+- [Balsamiq](https://balsamiq.com/) is a user interface design tool for creating wireframes.
 - [Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML.
-- [HTML](https://html.spec.whatwg.org/) is the standard markup language for documents designed to be displayed in a web browser.
-- [Python](https://www.python.org/) is an interpreted, high-level and general-purpose programming language.
-- [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database system.
 - [Cloudinary](https://cloudinary.com/) is a cloud service that offers a solution to a web application's entire image management pipeline.
+- [Django](https://www.djangoproject.com/) is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 - [Heroku](https://www.heroku.com/) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+- [HTML](https://html.spec.whatwg.org/) is the standard markup language for documents designed to be displayed in a web browser.
+- [JavaScript](https://www.javascript.com/) is a programming language that adds interactivity to your website.
 - [Jest JS](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity.
+- [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database system.
+- [Python](https://www.python.org/) is an interpreted, high-level and general-purpose programming language.
 - [UnitTest](https://docs.python.org/3/library/unittest.html) comes standard with Python and is a testing framework.
 
 # Testing
