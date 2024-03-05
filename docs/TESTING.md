@@ -18,7 +18,7 @@ Use extension to show screens from each page at each iteration.
 
 | # | Problem | Screenshot | Solution | Screenshot |
 | --- | --- | --- | --- | --- |
-| [#29](https://github.com/alanjameschapman/whiteboard/issues/29) | Edit button not populating comment box for editing | [#29](/docs/issues/29-1.png) | Javascript amended from "id_body" to "id_content | [#29](/docs/issues/29-2.png) |
+| [#29](https://github.com/alanjameschapman/whiteboard/issues/29) | Edit button not populating comment box for editing | ![#29](/docs/issues/29-1.png) | Javascript amended from "id_body" to "id_content | ![#29](/docs/issues/29-2.png) |
 
 #### Unresolved
 ### Lighthouse
