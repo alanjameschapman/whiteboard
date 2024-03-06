@@ -1,6 +1,7 @@
 """
 This file is used to create a form for the comment section of the blog.
 """
+from django_summernote.widgets import SummernoteWidget
 from django import forms
 from .models import Comment, Post
 
@@ -29,6 +30,8 @@ class PostForm(forms.ModelForm):
     ``content``
         The content of the blog post.
     """
+    content = forms.CharField(widget=SummernoteWidget())
+
     class Meta:
         """
         This class is used to create a form for the blog post.
