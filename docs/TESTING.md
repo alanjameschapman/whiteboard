@@ -19,8 +19,13 @@ Use extension to show screens from each page at each iteration.
 | # | Problem | Screenshot | Solution | Screenshot |
 | --- | --- | --- | --- | --- |
 | [#29](https://github.com/alanjameschapman/whiteboard/issues/29) | Edit button not populating comment box for editing | ![#29](/docs/issues/29-1.png) | Javascript amended from "id_body" to "id_content | ![#29](/docs/issues/29-2.png) |
+| [#30](https://github.com/alanjameschapman/whiteboard/issues/30) | New create_post template not rendering | <img width="638" alt="Screenshot 2024-03-06 at 10 04 01" src="https://github.com/alanjameschapman/whiteboard/assets/137620143/92e38f97-34e0-48dc-bbad-0bfbaf739215"> | Ordering of edblog/urls.py amended from most specific to least specific | <img width="638" alt="Screenshot 2024-03-06 at 10 04 47" src="https://github.com/alanjameschapman/whiteboard/assets/137620143/53372de8-e38c-4516-b7ab-4d9f4021fb5b"> |
 
 #### Unresolved
+
+| # | Problem | Screenshot | Solution | Screenshot |
+| --- | --- | --- | --- | --- |
+
 ### Lighthouse
 WAVE and Web Disability Simulator. Disable extensions if they interfere. incognito mode?
 ### Code Validation
