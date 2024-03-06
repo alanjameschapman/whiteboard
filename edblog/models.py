@@ -1,8 +1,9 @@
 """
 This module contains the models for the edblog app.
 """
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
+from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
 
@@ -14,7 +15,12 @@ class Post(models.Model):
     Stores a single blog post entry related to :model:`auth.User`.
     """
 
-    title = models.CharField(max_length=200, unique=True)
+    title = models.CharField(
+        max_length=200,
+        unique=True,
+        error_messages={
+            'unique': 'A post with this title already exists - please choose a different title. Case, punctuation and spacing are ignored.',
+        },)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='edblog_posts')
     featured_image = CloudinaryField('image', default='placeholder')
@@ -23,6 +29,14 @@ class Post(models.Model):
     updated_on = models.DateTimeField(auto_now=True)
     status = models.IntegerField(choices=STATUS, default=0)
     excerpt = models.CharField(max_length=200, blank=True)
+
+    def save(self, *args, **kwargs):
+        """
+        Ensures that the slug is set using the title.
+        """
+        if not self.slug: # checks if the slug is set
+            self.slug = slugify(self.title) # sets the slug using the title
+        super(Post, self).save(*args, **kwargs)
 
     class Meta:
         """

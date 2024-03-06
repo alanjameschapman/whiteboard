@@ -1,10 +1,12 @@
 """
 Views for the :model:`edblog.Post` and :model:`edblog.Comment` models.
 """
-from django.shortcuts import render, get_object_or_404, reverse, redirect
-from django.views import generic
 from django.contrib import messages
+from django.db import IntegrityError
 from django.http import HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
+from django.template.defaultfilters import slugify
+from django.views import generic
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
@@ -148,7 +150,14 @@ def create_post(request):
         if form.is_valid():
             post = form.save(commit=False)  # Don't save the form to the database yet
             post.author = request.user  # Set the author field to the current user
-            post.save()  # Now save the form to the database
+            post.slug = slugify(post.title)
+            try:
+                post.save()  # Try to save the form to the database
+            except IntegrityError as e: # If the slug is not unique, add an error to the form
+                if 'slug' in str(e):
+                    form.add_error('title', 'A post with this title already exists - please choose a different title. Case, punctuation and spacing are ignored.')
+                    return render(request, 'edblog/create_post.html', {'form': form})
+                raise e
             return redirect('home')
     else:
         form = PostForm()
