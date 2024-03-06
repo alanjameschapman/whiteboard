@@ -4,6 +4,8 @@
 {% url 'account_login' as login_url %}
 {% url 'account_signup' as signup_url %}
 {% url 'account_logout' as logout_url %}
+{% url 'create_post' as create_post_url %}
+
 
 <!DOCTYPE html>
 <html class="h-100" lang="en">
@@ -56,6 +58,9 @@
                             href="{% url 'account_login' %}">Login</a>
                     </li>
                     {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'create_post' %}">Post</a>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -2,6 +2,8 @@
 Views for the :model:`edblog.Post` and :model:`edblog.Comment` models.
 """
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import IntegrityError
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect
@@ -14,7 +16,7 @@ from .forms import CommentForm, PostForm
 # Create your views here.
 
 
-class PostList(generic.ListView):
+class PostList(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`blog.Post` objects.
     """
@@ -26,7 +28,7 @@ class PostList(generic.ListView):
     # looking for specific content. Last 9 posts should be enough to show, but
     # not too many to overwhelm the user.
 
-
+@login_required
 def post_detail(request, slug):
     """
     Display an individual :model:`edblog.Post`.
@@ -76,7 +78,7 @@ def post_detail(request, slug):
         },
     )
 
-
+@login_required
 def comment_edit(request, slug, comment_id):
     """
     Display an individual :model:`edblog.Comment` for editing.
@@ -111,6 +113,7 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 
+@login_required
 def comment_delete(request, slug, comment_id):
     """
     Delete an individual :model:`edblog.Comment`.
@@ -136,6 +139,7 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+@login_required
 def create_post(request):
     """
     Create a new :model:`edblog.Post`.
