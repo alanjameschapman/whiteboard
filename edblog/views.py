@@ -151,6 +151,10 @@ def create_post(request):
             post = form.save(commit=False)  # Don't save the form to the database yet
             post.author = request.user  # Set the author field to the current user
             post.slug = slugify(post.title)
+            if 'submit' in request.POST:
+                post.status = 1 # publish the post
+            elif 'save_draft' in request.POST:
+                post.status = 0 # save the post as a draft
             try:
                 post.save()  # Try to save the form to the database
             except IntegrityError as e: # If the slug is not unique, add an error to the form
