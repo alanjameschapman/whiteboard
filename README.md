@@ -41,7 +41,7 @@ The following Entity Relationship Diagram (ERD) describes how the database model
 
 **One-to-many relationships:**
 
-- A School has many Teachers, Students, and Sets.
+- A School has many Teachers and Students.
 - A Teacher teaches many Sets.
 - A Subject is offered within many Sets.
 - A Blog can have many Comments.
