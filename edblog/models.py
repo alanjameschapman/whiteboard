@@ -124,7 +124,7 @@ class Teacher(models.Model):
 
     # pylint: disable=E0307
     def __str__(self):
-        return self.user.username
+        return self.user.username # pylint: disable=no-member
 
 
 class Set(models.Model):
@@ -167,7 +167,7 @@ class Student(models.Model):
 
     # pylint: disable=E0307
     def __str__(self):
-        return self.user.username
+        return self.user.username # pylint: disable=no-member
 
 
 class Enrolment(models.Model):
