@@ -12,6 +12,12 @@ class PostAdmin(SummernoteModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     summernote_fields = ('content',)
 
+    def get_queryset(self, request):
+        qs = super().get_queryset(request)
+        if request.user.is_superuser:
+            return qs
+        return qs.filter(author=request.user)
+
 @admin.register(Teacher)
 class TeacherAdmin(admin.ModelAdmin):
     list_display = ('user', 'school')

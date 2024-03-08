@@ -23,6 +23,7 @@
                                 {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ post.author }}</p>
+                                    <p class="author">Set: {{ post.set }}</p>
                                 </div>
                             </div>
                             <a href="{% url 'post_detail' post.slug %}" class="post-link">
