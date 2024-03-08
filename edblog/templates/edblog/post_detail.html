@@ -72,8 +72,11 @@
                     <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
+                    <!-- {% if user.is_authenticated and user.teacher %}
+                    <button id="approveButton" class="btn btn-success"
+                        data-comment_id="{{ comment.id }}">Approve</button>
+                    {% endif %} -->
                 </div>
-                <!-- Our for loop ends here -->
                 {% endfor %}
             </div>
         </div>

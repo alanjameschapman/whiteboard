@@ -23,6 +23,8 @@ class Post(models.Model):
         },)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='edblog_posts')
+    subject = models.ForeignKey('Subject', on_delete=models.CASCADE, blank=True, null=True)
+    set = models.ForeignKey('Set', on_delete=models.CASCADE, blank=True, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -158,6 +160,7 @@ class Student(models.Model):
     school = models.ForeignKey(School, on_delete=models.CASCADE)
     year = models.IntegerField()
     grade = models.IntegerField()
+    sets = models.ManyToManyField(Set, through='Enrolment')
 
     class Meta:
         """
@@ -189,4 +192,4 @@ class Enrolment(models.Model):
 
     # pylint: disable=E0307
     def __str__(self):
-        return self.student.user.username + " " + self.subject.name
+        return self.student.user.username + " studying " + self.subject.name + " in " + self.set.name + " taught by " + self.set.teacher.user.username # pylint: disable=no-member
