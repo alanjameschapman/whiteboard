@@ -1,9 +1,11 @@
 # Introduction 
+
 Learning platform for teachers to post topic notes, tutorials and tests. Students can comment (ask questions) and teacher moderates.
 Topics can be tagged with skills. Results can be filtered by tags.
 Please use GitHub's burger bun top left for auto-generated Table of Contents
 
 # Agile Development
+
 This project was developed and [documented](docs/AGILE.md) using Agile principles.
 
 # 5 planes of User Experience
@@ -41,7 +43,7 @@ The following Entity Relationship Diagram (ERD) describes how the database model
 
 **One-to-many relationships:**
 
-- A School has many Teachers, Students, and Sets.
+- A School has many Teachers and Students.
 - A Teacher teaches many Sets.
 - A Subject is offered within many Sets.
 - A Blog can have many Comments.
@@ -72,16 +74,23 @@ Colour schemes, fonts go HERE.
 - “if comment.author == request.user:” in view is used to check at the back-end for authorship.
 - Use metadata for enhanced superuser UX in admin panel.
 - Pros and cons of classes vs functions.
-- AllAuth used because it is a widely-used and secure thingy with many advanced features, and is simpler to implement than by using Django (avoids having to write extra code, forms and permissions).
-- Set Debug to True for development but False before deployment/submission
 
 ## Not implemented yet...
 
 # Technologies
+
+## Django customisations
+- [Django](https://www.djangoproject.com/) is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
+- [Cloudinary](https://cloudinary.com/) is a cloud service that offers a solution to a web application's entire image management pipeline.
+- [AllAuth](https://docs.allauth.org/) is a Django package that provides a set of views, templates, and helper functions to handle user authentication, registration, and account management..
+- [Summernote](https://summernote.org/) is a simple WYSIWYG editor which allows you to embed Summernote into Django.
+- [Crispy Forms](https://django-crispy-forms.readthedocs.io/en/latest/#) is a third-party Django app that helps you manage Django forms using Bootstrap styles.
+- [gunicorn](https://gunicorn.org/) is a WSGI (Web Server Gateway Interface) HTTP server for running Python web applications. It acts as a bridge between the web application and the web server, handling requests and responses efficiently.
+- [whitenoise](https://whitenoise.readthedocs.io/en/stable/index.html) is a Python library that simplifies serving static files in a Django web applications without relying on a separate web server.
+
+## Other technologies
 - [Balsamiq](https://balsamiq.com/) is a user interface design tool for creating wireframes.
 - [Cascading Style Sheets)](https://www.w3.org/Style/CSS/Overview.en.html) (CSS) is a stylesheet language used to describe the presentation of a document written in HTML or XML.
-- [Cloudinary](https://cloudinary.com/) is a cloud service that offers a solution to a web application's entire image management pipeline.
-- [Django](https://www.djangoproject.com/) is a high-level Python Web framework that encourages rapid development and clean, pragmatic design.
 - [Heroku](https://www.heroku.com/) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 - [HTML](https://html.spec.whatwg.org/) is the standard markup language for documents designed to be displayed in a web browser.
 - [JavaScript](https://www.javascript.com/) is a programming language that adds interactivity to your website.
@@ -92,7 +101,7 @@ Colour schemes, fonts go HERE.
 
 # Testing
 
-Manual and automated testing was completed and [documented](docs/TESTING.md) throughout.
+It was not necessary to complete both automated and manual testing, so the latter was completed and [documented](docs/TESTING.md) throughout. The following things were tested: responsiveness, browser compatibility, bugs, Lighthouse, code validation, user stories, features.
 
 # Deployment, Forking and Cloning
 

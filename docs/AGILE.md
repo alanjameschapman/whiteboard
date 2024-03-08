@@ -29,10 +29,17 @@ At the end of sprint 1 it was calculated that over 20 hours of work, 6 user stor
 
 It was established that the story points for sprint 1 issues were underestimated.
 
-It was discussed at the mentor meeting that it would still be valuable to create a detailed user flow diagram but this could be deprioritized, as there was enough information on the wireframes to help build the project. Story points reduced from 2 to 1 due to some of the tasks within [user story #13](https://github.com/alanjameschapman/whiteboard/issues/13) being completed.
-
 ### Minutes from Mentor Meeting 1
 
+It was discussed at the mentor meeting that:
+
+- A detailed user flow diagram could be deprioritized, as there was enough information on the wireframes to help build the project. Story points reduced from 2 to 1 due to some of the tasks within [user story #13](https://github.com/alanjameschapman/whiteboard/issues/13) being completed.
+- Focus on making the site work for a single school initially, then broaden to multiple schools.
+- Agreed that site could be split into two apps: **blog** and **profile**.
+- Branching can be used per user story, but first branch named **MVP** because a lot of the user stories were interconnected and couldn't be completed in series.
+- Summernote Rich Text Formatting (RTF) can be displayed on front-end form for post creation.
+- Bringing functionality to the front end gives a better UX - credit will not be given to any work done on the admin panel.
+- Automated testing not required, but manual testing must be exhaustive/detailed.
 
 ## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
 
@@ -41,6 +48,8 @@ Sprint 2 focused on creating a Minimum Viable Product for deployment on due date
 ![sprint2_plan](/docs/sprints/sprint2_plan.png)
 
 Based on time taken for the django blog walkthrough, it was anticipated that these issues could be accomplished within the timebox.
+
+### Minutes from Mentor Meeting 2
 
 ## Sprint 3 - ends with Mentor Session 3 (Final Project Review)
 

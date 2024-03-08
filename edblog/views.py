@@ -15,18 +15,31 @@ from .forms import CommentForm, PostForm
 
 # Create your views here.
 
-
 class PostList(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`blog.Post` objects.
     """
-    queryset = Post.objects.filter(status=1).order_by('-created_on')  # pylint: disable=no-member
+    # queryset = Post.objects.filter(status=1).order_by('-created_on')  # pylint: disable=no-member
     # tailored to show latest and published posts first
     template_name = "edblog/index.html"
     paginate_by = 9  # Increased from 6 to 9. Infinite scroll discounted
     # because it tends to be used for aimless browsing - our users will be
     # looking for specific content. Last 9 posts should be enough to show, but
     # not too many to overwhelm the user.
+
+    def get_queryset(self):
+        # Check if the user has a related Teacher instance
+        if hasattr(self.request.user, 'teacher'):
+            # Get the posts authored by the teacher
+            return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')
+        elif hasattr(self.request.user, 'student'):
+            # Get the sets the student is enrolled in
+            student_sets = self.request.user.student.sets.all()
+            # Get the posts related to the sets the student is enrolled in
+            return Post.objects.filter(set__in=student_sets, status=1).order_by('-created_on')
+        else:
+            # If the user has neither a related Teacher nor Student instance, return an empty queryset
+            return Post.objects.none()
 
 @login_required
 def post_detail(request, slug):
