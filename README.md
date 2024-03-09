@@ -11,7 +11,7 @@ This project was developed and [documented](docs/AGILE.md) using Agile principle
 # 5 planes of User Experience
 The project was planned using the five planes of User Experience:
 
-![UX5planes](/docs/UX5planes.png)
+![UX5planes](/docs/screenshots/UX5planes.png)
 
 ## Strategy
 
@@ -31,7 +31,7 @@ Their needs are defined and managed as user stories via GitHub Projects.
 
 Following an initial brainstorm of desired and possible functionality, a set of user stories was tabulated. These were grouped into Epics and Themes for Agile purposes,  categorized using MoSCoW, and allocated Story Points. By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
-![MVP](/docs/MVP.png)
+![MVP](/docs/screenshots/MVP.png)
 
 A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features . 
 
@@ -67,7 +67,26 @@ Testing of interface and navigation has been [documented](docs/TESTING.md).
 
 ## Surface
 
-Colour schemes, fonts go HERE.
+### Colour schemes
+
+The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image:
+
+![default image](/static/images/default.jpg)
+
+The dominant colour is yellow, which promotes [positivity, attention and creativity](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/) in the classroom. This was chosen as the **primary colour**.
+
+The [Coolors image picker](https://coolors.co/image-picker) was used to generate a colour pallette based on the primary colour yellow. The [consensus](https://whitesharkmedia.com/blog/web-tracking/choose-the-best-color-palette-for-your-website/) for website colour palettes is that in addition to white, three colours should be used - primary, seconday and accent - in a ratio of 60:30:10.
+
+The colour combination was regenerated until the three colours generated a positive response in the author and provided suitable contrast, which was checked using [eightshapes](https://eightshapes.com/).
+
+![contrast](/docs/screenshots/contrast.png)
+
+It was noted that the colours should be used as follows:
+- Yellow: text on dark blue or background to dark blue.
+- Light blue: text on dark blue or background to dark blue.
+- Dark blue: text or background with any colour.
+
+### Fonts
 
 # Features
 ## Implemented
@@ -115,3 +134,5 @@ It was not necessary to complete both automated and manual testing, so the latte
 - Principles of Agile Development, Code Institute LMS
 - [The five elements of UX design & their common pitfalls](https://despark.com/blog/five-elements-ux-design-common-pitfalls), Despark.
 - [How to Use the Fibonacci Scale to Estimate Story Points](https://www.scalablepath.com/project-management/agile-points-fibonacci-sequence), Scalable Path
+- [Classroom psychology: Which colours are best for education?](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/), Hope Education.
+- [How to choose the best colour palette for your website](https://whitesharkmedia.com/blog/web-tracking/choose-the-best-color-palette-for-your-website/), White Shark Media
