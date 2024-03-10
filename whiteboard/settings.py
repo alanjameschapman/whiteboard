@@ -155,3 +155,28 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+SUMMERNOTE_CONFIG = {
+    'iframe': False,
+    'summernote': {
+        'width': '100%',
+        'height': '300px',
+        'toolbar': [
+            ['style', ['style']],
+            ['font', ['bold', 'italic', 'underline', 'clear', 'superscript', 'subscript', 'strikethrough', 'removeFormat']],
+            ['fontfamily', ['fontname']],
+            ['fontsize', ['fontsize']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['height', ['height']],
+            ['color', ['color']],
+            ['insert', ['table', 'link', 'picture', 'video', 'hr']],
+            ['view', ['fullscreen', 'codeview']],
+            ['help', ['help']],
+            ['alignment', ['ltr', 'rtl', 'center']],
+            ['indent', ['outdent', 'indent']],
+            ['misc', ['undo', 'redo']],
+        ],
+        'disableResizeEditor': True,
+        'styleTags': ['p', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6'],
+    },
+}

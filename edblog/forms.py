@@ -37,4 +37,4 @@ class PostForm(forms.ModelForm):
         This class is used to create a form for the blog post.
         """
         model = Post
-        fields = ('title', 'subject', 'set', 'content')
+        fields = ('title', 'subject', 'set', 'image', 'content')

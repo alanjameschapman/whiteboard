@@ -2,13 +2,14 @@
 
 body {
     background-color: #F9FAFC;
+    color: #04395e;
 }
 
 .brand {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: white; /* was #E84610 */
 }
 
 .red-o {
@@ -24,16 +25,16 @@ body {
 }
 
 .dark-bg {
-    background-color: #445261;
+    background-color: #04395e; /* was #445261 */
 }
 
 .main-bg {
-    background-color: #F9FAFC;
+    background-color: #BFD7EA; /* was #F9FAFC */
 }
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: white; /* was transparent */
 }
 
 .image-container {
@@ -45,7 +46,7 @@ body {
     bottom: 5%;
     min-width: 30%;
     left: -2px;
-    background-color: #188181;
+    background-color: #04395e;
 }
 
 .scale {
@@ -69,7 +70,7 @@ body {
 }
 
 .masthead-text {
-    background-color: #445261;
+    background-color: #04395e; /* was #445261 */
     color: white;
     position: relative;
 }
@@ -115,7 +116,7 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #04395e; /* was #445261 */
     color: #fff;
 }
 
@@ -132,7 +133,7 @@ body {
 
 .link:hover,
 .link:active {
-    color: #445261;
+    color: #eec701; /* was #445261 */
     text-decoration: underline;
 }
 
@@ -160,4 +161,30 @@ body {
 
 .approval {
     color: rgb(222, 146, 168);
+}
+
+/* Custom styles for the blog app */
+
+.navbar-light .navbar-nav .nav-link {
+    color: white;
+}
+
+.navbar-light .navbar-toggler-icon {
+    color: white;
+}
+
+.dropshadow {
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /* was none */
+}
+
+.navbar-nav {
+    flex-direction: row;
+}
+
+.board {
+    background-color: white;
+}
+
+.summernote {
+    width: 100%;
 }
