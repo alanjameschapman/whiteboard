@@ -163,7 +163,7 @@ def create_post(request):
         An instance of :form:`edblog.PostForm`.
     """
     if request.method == 'POST':
-        form = PostForm(request.POST)
+        form = PostForm(request.POST, request.FILES)
         if form.is_valid():
             post = form.save(commit=False)  # Don't save the form to the database yet
             post.author = request.user  # Set the author field to the current user

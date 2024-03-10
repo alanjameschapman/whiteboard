@@ -96,12 +96,12 @@ body {
 
 .post-link {
     text-decoration: none;
-    color: #445261;
+    color: #04395e; /* was #445261 */
 }
 
 .post-link:hover,
 .page-link {
-    color: #E84610;
+    color: #04395e; /* was #E84610 */
 }
 
 .post-title {
