@@ -21,9 +21,11 @@ Having created all user stories and added them to the backlog, I prioritized pla
 
 The Kanban was tailored to visualise work in progress and to be 
 
+### Sprint 1 plan
+
 ![sprint1_plan](/docs/sprints/sprint1_plan.png)
 
-At the end of sprint 1 it was calculated that over 20 hours of work, 6 user story points were completed, giving a velocity of 6/20 = 0.3 pts/hr.
+At the end of sprint 1 it was calculated that with 20 hours of work, 6 user story points were completed, giving a velocity of 6/20 = 0.3 pts/hr.
 
 ![sprint1_complete](/docs/sprints/sprint1_complete.png)
 
@@ -40,18 +42,38 @@ It was discussed at the mentor meeting that:
 - Summernote Rich Text Formatting (RTF) can be displayed on front-end form for post creation.
 - Bringing functionality to the front end gives a better UX - credit will not be given to any work done on the admin panel.
 - Automated testing not required, but manual testing must be exhaustive/detailed.
+- Prioritisation plan for sprint2 reviewed and agreed.
 
 ## Sprint 2 - ends with Mentor Session 2 (Mid-Point Project Review)
 
 Sprint 2 focused on creating a Minimum Viable Product for deployment on due date, where all merit criteria would be met. All user stories required for the MVP were added to this sprint.
 
+### Sprint 2 plan
+
 ![sprint2_plan](/docs/sprints/sprint2_plan.png)
 
 Based on time taken for the django blog walkthrough, it was anticipated that these issues could be accomplished within the timebox.
 
+At the end of sprint 2 it was calculated that with 30 hours of work, 15 user story points were completed, giving a velocity of 15/30 = 0.5 pts/hr.
+
+![sprint2_complete](/docs/sprints/sprint2_complete.png)
+
 ### Minutes from Mentor Meeting 2
 
+- Confirmed that MVP has been achieved so can be posted on slack for peer review. Can add styling if desired, but not necessary for MVP.
+- OK to distribute usernames and passwords for teacher1 and student1 but ensure peers can't log in to admin.
+- Colour scheme reviewed. No problems envisaged with only  proposed colours but can use another 1 or 2 if struggling with visuals.
+- Teachers can currently post for classes they don't teach but not deemed a problem and can investigate later if desired.
+- Include Delete buttons on posts for teachers.
+- Front-end approval needs getCookies function and csrf's etc.
+- Problems with passwordReset discussed - to check django setup.
+- Prioritisation plan for sprint3 reviewed and agreed.
+
 ## Sprint 3 - ends with Mentor Session 3 (Final Project Review)
+
+### Sprint 3 plan
+
+![sprint3_plan](/docs/sprints/sprint3_plan.png)
 
 
 ## Sprint 4 - ends with Submit Full Stack Toolkit Portfolio Project
