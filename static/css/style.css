@@ -114,26 +114,26 @@ body {
     color: lightgray;
 }
 
-.btn-signup,
-.btn-edit {
+.btn-signup {
     background-color: #04395e; /* was #445261 */
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
-    color: #23BBBB;
+    background-color: #04395e; /* was #fff */
+    color: #eec701; /* was #23BBBB */
 }
 
 .link {
-    color: #23BBBB;
+    color: #04395e; /* was ##23BBBB */
     text-decoration: none;
+    font-weight: bold;
 }
 
 .link:hover,
 .link:active {
-    color: #eec701; /* was #445261 */
+    color: #04395e; /* was #445261 */
     text-decoration: underline;
 }
 
@@ -187,4 +187,19 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /*
 
 .summernote {
     width: 100%;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: white;
+    font-weight: bold;
+}
+
+.btn-edit {
+    background-color: orange; /* was #445261 */
+    color: black;
 }

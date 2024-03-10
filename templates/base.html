@@ -71,7 +71,7 @@
         </div>
     </nav>
     <!-- displaying Django messages -->
-    <!-- <div class="container">
+    <div class="container">
         <div class="row">
             <div class="col-md-8 offset-md-2">
                 {% for message in messages %}
@@ -83,12 +83,12 @@
                 {% endfor %}
             </div>
         </div>
-    </div> -->
+    </div>
     <main class="flex-shrink-0 main-bg">
         {% if user.is_authenticated %}
-        <p class="text-end m-3 fw-bold">You are logged in as {{ user }}</p>
+        <p class="text-end m-3">You are logged in as {{ user }}</p>
         {% else %}
-        <p class="text-end m-3 fw-bold">You are not logged in</p>
+        <p class="text-end m-3">You are not logged in</p>
         {% endif %}
 
         {% block content %}
