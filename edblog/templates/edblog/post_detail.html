@@ -11,7 +11,7 @@
                 <!-- Post title goes in these h1 tags -->
                 <h1 class="post-title">{{ post.title }}</h1>
                 <!-- Post author goes before the | the post's created date goes after -->
-                <p class="post-subtitle">{{ post.author }} | {{ post.created_on }}</p>
+                <p class="post-subtitle">{{ post.author }} | {{ post.set }}</p>
             </div>
             <div class="d-none d-md-block col-md-6 masthead-image">
                 <img src="{% static 'images/default.jpg' %}" class="scale" alt="placeholder">
@@ -28,6 +28,12 @@
                 <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
                     {{ post.content | safe }}
+                    {% if request.user == post.author %}
+                    <div>
+                        <button class="btn btn-edit"
+                            onclick="location.href='{% url 'post_edit' slug=post.slug %}';">Edit</button>
+                    </div>
+                    {% endif %}
                 </article>
             </div>
         </div>
@@ -72,10 +78,10 @@
                     <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
-                    <!-- {% if user.is_authenticated and user.teacher %}
-                    <button id="approveButton" class="btn btn-success"
-                        data-comment_id="{{ comment.id }}">Approve</button>
-                    {% endif %} -->
+                    {% if user.is_authenticated and user.teacher %}
+                    <button class="btn btn-approve" data-comment_id="{{ comment.id }}"
+                        id="approveButton">Approve</button>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>

@@ -9,6 +9,9 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.template.defaultfilters import slugify
 from django.views import generic
+# from django.views.decorators.csrf import csrf_exempt
+from django.views.generic.edit import UpdateView
+from django.urls import reverse_lazy
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
 
@@ -40,6 +43,20 @@ class PostList(LoginRequiredMixin, generic.ListView):
         else:
             # If the user has neither a related Teacher nor Student instance, return an empty queryset
             return Post.objects.none()
+
+
+class PostUpdateView(LoginRequiredMixin, UpdateView):
+    """
+    Update a :model:`edblog.Post`.
+    """
+    model = Post
+    template_name = 'edblog/create_post.html'
+    form_class = PostForm
+    # fields = ['title', 'subject', 'set', 'featured_image', 'content']
+
+    def get_success_url(self):
+        return reverse_lazy('post_detail', args=[self.object.slug])
+
 
 @login_required
 def post_detail(request, slug):
@@ -183,3 +200,24 @@ def create_post(request):
     else:
         form = PostForm()
     return render(request, 'edblog/create_post.html', {'form': form})
+
+
+# @csrf_exempt
+# def comment_approve(request, slug, comment_id):
+#     """
+#     Approve an individual :model:`edblog.Comment`.
+
+#     **Context**
+
+#     ``post``
+#         An instance of :model:`edblog.Post`.
+#     ``comment``
+#         An instance of :model:`edblog.Comment`.
+#     """
+#     comment = get_object_or_404(Comment, id=comment_id)
+#     if request.method == 'POST':
+#         comment.approved_comment = True
+#         comment.save()
+#         return redirect('post_detail', slug=comment.post.slug)
+#     else:
+#         return HttpResponse('Invalid request method', status=405)
