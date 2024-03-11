@@ -10,7 +10,7 @@ from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.template.defaultfilters import slugify
 from django.views import generic
 # from django.views.decorators.csrf import csrf_exempt
-from django.views.generic.edit import UpdateView
+from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Post, Comment
 from .forms import CommentForm, PostForm
@@ -44,7 +44,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
             # If the user has neither a related Teacher nor Student instance, return an empty queryset
             return Post.objects.none()
 
-
+# Django's generic view for updating a model instance
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     """
     Update a :model:`edblog.Post`.
@@ -52,11 +52,19 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     template_name = 'edblog/create_post.html'
     form_class = PostForm
-    # fields = ['title', 'subject', 'set', 'featured_image', 'content']
 
     def get_success_url(self):
         return reverse_lazy('post_detail', args=[self.object.slug])
 
+
+class PostDeleteView(LoginRequiredMixin, DeleteView):
+    model = Post
+    success_url = reverse_lazy('home')  # replace with your post list URL
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        return queryset.filter(author=self.request.user)
+    
 
 @login_required
 def post_detail(request, slug):

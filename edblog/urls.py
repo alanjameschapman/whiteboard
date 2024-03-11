@@ -1,6 +1,6 @@
 from django.urls import path
 from . import views
-from .views import PostUpdateView
+from .views import PostUpdateView, PostDeleteView
 
 urlpatterns = [
     path('', views.PostList.as_view(), name='home'), # as_view() required for class-based views.
@@ -11,6 +11,7 @@ urlpatterns = [
     path('<slug:slug>/delete_comment/<int:comment_id>',
          views.comment_delete, name='comment_delete'),
     path('<slug:slug>/edit/', PostUpdateView.as_view(), name='post_edit'),
+    path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name='post_delete'),
 #     path('<slug:slug>/comment_approve/<int:comment_id>/',
 #          views.comment_approve, name='comment_approve'),
 ]
