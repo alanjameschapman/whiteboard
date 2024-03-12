@@ -82,10 +82,10 @@
                     <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
-                    {% if user.is_authenticated and user.teacher %}
+                    <!-- {% if user.is_authenticated and user.teacher %}
                     <button class="btn btn-approve" data-comment_id="{{ comment.id }}"
                         id="approveButton">Approve</button>
-                    {% endif %}
+                    {% endif %} -->
                 </div>
                 {% endfor %}
             </div>
