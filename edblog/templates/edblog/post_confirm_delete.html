@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 
 {% block content %}
-  <h1>Delete Post</h1>
-  <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
-  <form method="post">
-    {% csrf_token %}
-    <input type="submit" value="Confirm">
-  </form>
-{% endblock %}
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 mt-3 offset-md-2">
+      <h3>Delete Post</h1>
+      <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
+      <form method="post">
+        {% csrf_token %}
+        <input class="btn btn-delete" type="submit" value="Confirm">
+        <a class="btn btn-signup" href="{% url 'post_detail' object.slug %}">Cancel</a>
+      </form>
+    </div>
+  </div>
+
+  {% endblock %}
