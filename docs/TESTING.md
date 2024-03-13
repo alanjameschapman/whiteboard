@@ -6,9 +6,11 @@ Tables and screenshots of feature testing - Feature, Action and Effect. Expected
 
 ### Responsiveness
 Use extension to show screens from each page at each iteration.
-- Iteration 1
-- Iteration 2
-- Iteration 3
+| Stage | iPhone 6/7/8 | iPad | Laptop
+| --- | --- | --- | --- |
+| MVP | ![MVPiPhone678](/docs/testing/response/MVP/iPhone678.png) | ![MVPiPad](/docs/testing/response/MVP/iPadAir.png) | ![MVPMacBookAir](/docs/testing/response/MVP/MacBookAir.png)
+| Mid |
+| Final | 
 ### Browser Compatibility
 - Iteration 1
 - Iteration 2
