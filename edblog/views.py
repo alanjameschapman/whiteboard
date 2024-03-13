@@ -12,7 +12,7 @@ from django.views import generic
 # from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
-from .models import Post, Comment
+from .models import Post, Comment, Enrolment
 from .forms import CommentForm, PostForm
 
 
@@ -24,11 +24,9 @@ class PostList(LoginRequiredMixin, generic.ListView):
     """
     # queryset = Post.objects.filter(status=1).order_by('-created_on')  # pylint: disable=no-member
     # tailored to show latest and published posts first
+    model = Post
     template_name = "edblog/index.html"
-    paginate_by = 9  # Increased from 6 to 9. Infinite scroll discounted
-    # because it tends to be used for aimless browsing - our users will be
-    # looking for specific content. Last 9 posts should be enough to show, but
-    # not too many to overwhelm the user.
+    paginate_by = 9
 
     def get_queryset(self):
         # Check if the user has a related Teacher instance
@@ -36,13 +34,17 @@ class PostList(LoginRequiredMixin, generic.ListView):
             # Get the posts authored by the teacher
             return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')
         elif hasattr(self.request.user, 'student'):
-            # Get the sets the student is enrolled in
-            student_sets = self.request.user.student.sets.all()
-            # Get the posts related to the sets the student is enrolled in
-            return Post.objects.filter(set__in=student_sets, status=1).order_by('-created_on')
+            # Get the enrolments for the student
+            enrolments = Enrolment.objects.filter(student=self.request.user.student)
+            # Get the sets and subjects from the enrolments
+            student_sets = [enrolment.set for enrolment in enrolments]
+            student_subjects = [enrolment.subject for enrolment in enrolments]
+            # Get the posts related to the sets and subjects from the enrolments
+            return Post.objects.filter(set__in=student_sets, subject__in=student_subjects, status=1).order_by('-created_on')
         else:
             # If the user has neither a related Teacher nor Student instance, return an empty queryset
             return Post.objects.none()
+
 
 # Django's generic view for updating a model instance
 class PostUpdateView(LoginRequiredMixin, UpdateView):

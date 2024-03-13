@@ -67,6 +67,8 @@ Testing of interface and navigation has been [documented](docs/TESTING.md).
 
 ## Surface
 
+Infinite scroll discounted because it tends to be used for aimless browsing - our users will be looking for specific content. Last 9 posts should be enough to show, but not too many to overwhelm the user.
+
 ### Colour schemes
 
 The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image:
@@ -89,6 +91,7 @@ It was noted that the colours should be used as follows:
 ### Fonts
 
 # Features
+
 ## Implemented
 - “if comment.author == request.user:” in view is used to check at the back-end for authorship.
 - Use metadata for enhanced superuser UX in admin panel.
