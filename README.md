@@ -2,38 +2,38 @@
 
 Learning platform for teachers to post topic notes, tutorials and tests. Students can comment (ask questions) and teacher moderates.
 Topics can be tagged with skills. Results can be filtered by tags.
-Please use GitHub's burger bun top left for auto-generated Table of Contents
+GitHub's burger bun (top left) can be used to navigate to the desired section.
 
 # Agile Development
 
 This project was developed and [documented](docs/AGILE.md) using Agile principles.
 
 # 5 planes of User Experience
-The project was planned using the five planes of User Experience:
+The project was planned using the five planes of User Experience, as summarised below:
 
 ![UX5planes](/docs/screenshots/UX5planes.png)
 
 ## Strategy
 
-In the author's experience (as a former Science teacher) classrooms can be hectic environments! There is a lot of content to cover, and limited time to learn it. Whilst teachers do their best to address misconceptions and questions of every student in the class, it is inevitable that some students may still leave the room with unanswered questions.
+In the author's experience (as a former Science teacher) classrooms can be hectic environments! There is a lot of content to teach, and limited time to cover it. Whilst teachers do their best to address misconceptions and questions of every student in the class, it is inevitable that some students may still leave the room with unanswered questions.
 
 The goals this platform seeks to achieve are two-fold:
-- For the TEACHER to provide topic content, address student questions, and hopefully set quizzes.
+- For the TEACHER to provide topic content, address student questions, and hopefully set quizzes to test student knowledge and understanding.
 - For the STUDENT to access relevant content (according to their teacher and class), and improve their understanding by asking questions (via comments) and completing quizzes.
 
-User are divided into three main groups:
-- Teacher: to teach using website by posting topic notes.
-- Superuser: to set up schools, subjects and classes.
+User are divided into three main groups: Superuser, Teacher and Student. In the context of a school, the Superuser would likely be the headteacher, admin or IT department. For safeguarding reasons, they would be responsible for creating teachers logins, subjects and sets. They are also responsible for resetting passwords if required.
 
-Their needs are defined and managed as user stories via GitHub Projects.
+Their needs were defined as user stories and managed via GitHub Issues/Projects.
 
 ## Scope
 
-Following an initial brainstorm of desired and possible functionality, a set of user stories was tabulated. These were grouped into Epics and Themes for Agile purposes,  categorized using MoSCoW, and allocated Story Points. By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
+Following an initial brainstorm of desired and possible functionality, a set of user stories was tabulated. These were grouped into Epics and Themes for Agile purposes, categorized using MoSCoW, and allocated Story Points. By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
 ![MVP](/docs/screenshots/MVP.png)
 
-A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features . 
+A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features, which were not included in the scope of this project:
+- Archive section of older posts
+- Superuser customisation of page theme, layout, colours, widgets etc.
 
 ## Structure
 

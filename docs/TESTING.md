@@ -25,12 +25,11 @@ Tables and screenshots of feature testing - Feature, Action and Effect. Expected
 
 ### Responsiveness
 
-The responsiveness to different screen sizes was checked throughout the project as shown below.
+The responsiveness to different screen sizes was checked throughout the project. Results for MVP and final site are shown below.
 
 | Stage | iPhone 6/7/8 | iPad | Laptop
 | :-: | :-: | :-: | :-: |
 | MVP | ![MVPiPhone678](/docs/testing/response/MVP/iPhone678.png) | ![MVPiPad](/docs/testing/response/MVP/iPadAir.png) | ![MVPMacBookAir](/docs/testing/response/MVP/MacBookAir.png)
-| Mid |
 | Final | 
 
 ### Browser Compatibility
@@ -43,7 +42,6 @@ Browser compatibility was tested throughout the project as shown below. Using th
 | Stage | Chrome | Firefox | Safari
 | :-: | :-: | :-: | :-: |
 | MVP | &check; | &check; | &check; |
-| Mid | | |
 | Final | 
 
 ### Bugs
