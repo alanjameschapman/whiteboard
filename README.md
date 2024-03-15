@@ -37,7 +37,11 @@ A review of [edublogs](https://edublogs.org/) which appears to be the dominant p
 
 ## Structure
 
-The following Entity Relationship Diagram (ERD) describes how the database models will relate to each other.
+[Lucidchart](https://www.lucidchart.com) was used to structure the site navigation as shown in the user flow diagram below. This was later developed into wireframes.
+
+![user-flow](/docs/wireframes/user-flow.svg)
+
+The Entity Relationship Diagram (ERD) below shows how the database models will relate to each other.
 
 ![ERD](/docs/ERD/whiteboard_ERD.png)
 
@@ -45,29 +49,29 @@ The following Entity Relationship Diagram (ERD) describes how the database model
 
 - A School has many Teachers and Students.
 - A Teacher teaches many Sets.
-- A Subject is offered within many Sets.
-- A Blog can have many Comments.
+- A Teachers or Student can make many Comments.
+- A Subject is offered with many Sets.
+- A Post can have many Comments.
 
 **Many-to-many relationships:**
 
-- Students enroll in many Sets, and Sets have many Students (represented by the Enrollment entity).
+- Students can have many enrolments
+- Teachers can teach multiple Subjects
 - Comments can be made by either Students or Teachers on a Blog.
 
-Note that for now a grade_level attribute has been included in the Student entity in the event that the Homework functionality is implemented. 
-
-Some site navigation is shown in the wireframes, but 
-
-User flow chart HERE
+Note that a grade_level attribute was included in the Student entity in the event that the Homework functionality was implemented.
 
 ## Skeleton
 
+[Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.
+
 ![wireframes](/docs/wireframes/wireframes-user-journey.png)
+
+A mobile-first approach was used, with subsequent wireframes for larger screens developed thereafter.
 
 Testing of interface and navigation has been [documented](docs/TESTING.md).
 
 ## Surface
-
-Infinite scroll discounted because it tends to be used for aimless browsing - our users will be looking for specific content. Last 9 posts should be enough to show, but not too many to overwhelm the user.
 
 ### Colour schemes
 
@@ -75,7 +79,7 @@ The colour scheme is based on the default image placeholder, which may be preval
 
 ![default image](/static/images/default.jpg)
 
-The dominant colour is yellow, which promotes [positivity, attention and creativity](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/) in the classroom. This was chosen as the **primary colour**.
+The dominant colour is yellow, which promotes [positivity, attention and creativity](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/) in the classroom.
 
 The [Coolors image picker](https://coolors.co/image-picker) was used to generate a colour pallette based on the primary colour yellow. The [consensus](https://whitesharkmedia.com/blog/web-tracking/choose-the-best-color-palette-for-your-website/) for website colour palettes is that in addition to white, three colours should be used - primary, seconday and accent - in a ratio of 60:30:10.
 
@@ -88,7 +92,15 @@ It was noted that the colours should be used as follows:
 - Light blue: text on dark blue or background to dark blue.
 - Dark blue: text or background with any colour.
 
+During development it was noted that it was easier to implementation dark blue and light blue as primary and secondary colours respectively. Yellow was therefore used to highlight calls-to-action such as buttons.
+
 ### Fonts
+
+
+
+### Navigation
+
+Infinite scroll of blog posts was discounted because it tends to be used for aimless browsing - our users will be looking for specific content. Last 9 posts should be enough to show, but not too many to overwhelm the user.
 
 # Features
 
@@ -117,6 +129,7 @@ It was noted that the colours should be used as follows:
 - [HTML](https://html.spec.whatwg.org/) is the standard markup language for documents designed to be displayed in a web browser.
 - [JavaScript](https://www.javascript.com/) is a programming language that adds interactivity to your website.
 - [Jest JS](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity.
+- [Lucidchart](https://www.lucidchart.com) is a web-based diagramming tool used for creating flowcharts, process maps, wireframes, org charts, and other visual representations of ideas and concepts.
 - [PostgreSQL](https://www.postgresql.org/) is a powerful, open source object-relational database system.
 - [Python](https://www.python.org/) is an interpreted, high-level and general-purpose programming language.
 - [UnitTest](https://docs.python.org/3/library/unittest.html) comes standard with Python and is a testing framework.
