@@ -96,7 +96,11 @@ During development it was noted that it was easier to implementation dark blue a
 
 ### Fonts
 
+[iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) lists the "Most Used Google Fonts on School Websites". The top fonts were reviewed and Raleway was selected for its unique 'w' which would be used as the branding, navbar, footer and favicon to represent the 'w' in whiteboard.
 
+[fontjoy](https://fontjoy.com/) was used to find suitable pairing fonts. Martel Sans was chosen because it has serif and sans-serif variants for headings and paragraphs respectively. Sans-serif was chosen because serifs can be difficult to read on screens.
+
+![fonts](/docs/screenshots/fonts.png)
 
 ### Navigation
 
@@ -153,3 +157,5 @@ It was not necessary to complete both automated and manual testing, so the latte
 - [Classroom psychology: Which colours are best for education?](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/), Hope Education.
 - [How to choose the best colour palette for your website](https://whitesharkmedia.com/blog/web-tracking/choose-the-best-color-palette-for-your-website/), White Shark Media
 - [Eightshapes](https://eightshapes.com/)
+- [iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) as inspiration for commonly-used fonts in educational websites.
+- [fontjoy](https://fontjoy.com/) for pairing fonts.

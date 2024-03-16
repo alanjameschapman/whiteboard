@@ -21,7 +21,6 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 | - | :-: | :-: |
 | View all posts summarized | &check;
 
-Tables and screenshots of feature testing - Feature, Action and Effect. Expected outcome vs actual outcome.
 
 ### Responsiveness
 
@@ -79,6 +78,8 @@ Python - http://pep8online.com/
 | Feature | Test | Outcome |
 | - | - | - |
 |
+
+Tables and screenshots of feature testing - Feature, Action and Effect. Expected outcome vs actual outcome.
 
 ## Automated Testing
 - [Jest JS](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity.
