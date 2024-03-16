@@ -3,12 +3,13 @@
 body {
     background-color: #F9FAFC;
     color: #04395e;
+    font-family: "Martel Sans", sans-serif; /* added */
 }
 
 .brand {
-    font-family: Lato, sans-serif;
+    font-family: raleway, sans-serif; /* was Lora, serif */
     font-size: 1.4rem;
-    font-weight: 700;
+    font-weight: 500;
     color: white; /* was #E84610 */
 }
 
@@ -58,6 +59,7 @@ body {
     color: white;
     margin: 4px;
     text-transform: uppercase;
+    font-family: "Martel", sans-serif;
 }
 
 .masthead {
@@ -87,7 +89,7 @@ body {
     right: 90%;
     height: 100%;
     width: 150%;
-    background: #445261;
+    background: #04395e; /* was #445261 */
     -webkit-transform: skew(15deg);
     -moz-transform: skew(15deg);
     transform: skew(15deg);
@@ -167,6 +169,7 @@ body {
 
 .navbar-light .navbar-nav .nav-link {
     color: white;
+    font-family: raleway, sans-serif;
 }
 
 .navbar-light .navbar-toggler-icon {
@@ -192,14 +195,27 @@ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); /*
 .navbar-light .navbar-nav .nav-link.active {
     color: white;
     font-weight: bold;
+    font-family: raleway, sans-serif;
 }
 
 .navbar-light .navbar-nav .nav-link:hover {
     color: white;
     font-weight: bold;
+    font-family: raleway, sans-serif;
 }
 
 .btn-edit {
     background-color: orange; /* was #445261 */
     color: black;
+}
+
+.btn-approve {
+    background-color: green;
+    color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Martel", serif;
+    font-weight: 700;
+    font-style: normal;
 }
