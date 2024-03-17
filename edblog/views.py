@@ -153,7 +153,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            if request.user.teacher:  # assuming `teacher` is a boolean field in User model
+            if hasattr(request.user, 'teacher'):  # check if user has teacher attribute
                 comment.approved = True
             else:
                 comment.approved = False

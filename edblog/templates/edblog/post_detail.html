@@ -60,7 +60,7 @@
                 <!-- Loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
                 {% if not comment.approved %}
-                {% if comment.author == user or user.teacher %}
+                {% if comment.author == user or request.user.teacher %}
                 <div id="comment-div-{{ comment.id }}" class="p-2 comments faded">
                     {% else %}
                     <div id="comment-div-{{ comment.id }}" class="p-2 comments d-none">
@@ -87,7 +87,7 @@
                                     <button class="btn comment-delete" data-comment_id="{{ comment.id }}">Delete</button>
                                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                                 {% endif %}
-                                {% if user.teacher and not comment.approved %}
+                                {% if request.user.teacher and not comment.approved %}
                                     <button class="btn btn-approve" data-comment_id="{{ comment.id }}">Approve</button>
                                 {% endif %}
                             {% endif %}
