@@ -54,6 +54,7 @@ Browser compatibility was tested throughout the project as shown below. Using th
 | [#37](https://github.com/alanjameschapman/whiteboard/issues/37) | crispy form not resizing to card | ![#37](/docs/issues/37-1.png) | Add SUMMERNOTE_CONFIG in settings.py | ![#37](/docs/issues/37-2.png) |
 | [#38](https://github.com/alanjameschapman/whiteboard/issues/38) | Image upload not working | ![#38](/docs/issues/38-1.png) | Add form tag attribute in the HTML, which is necessary for file upload fields | ![#38](/docs/issues/38-2.png) |
 | [#39](https://github.com/alanjameschapman/whiteboard/issues/39) | Index template : student1 is only enrolled in astrophysics Y1S1 but is also seeing posts for codebreaking Y1S1. | ![#39](/docs/issues/39-2.png) | Import Enrolment model and update queryset. | ![#39](/docs/issues/39-4.png) |
+| [#42](https://github.com/alanjameschapman/whiteboard/issues/42) | "Mixed content" console error due to Cloudinary (http/https) on page load. | ![#42](/docs/issues/42-1.png) | Add meta to base.html to force https | ![#42](/docs/issues/42-2.png) |
 
 
 #### Unresolved
