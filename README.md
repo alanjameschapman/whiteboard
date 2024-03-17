@@ -159,3 +159,4 @@ It was not necessary to complete both automated and manual testing, so the latte
 - [Eightshapes](https://eightshapes.com/)
 - [iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) as inspiration for commonly-used fonts in educational websites.
 - [fontjoy](https://fontjoy.com/) for pairing fonts.
+- [favicon.io](https://favicon.io/favicon-generator/) was used to generate the favicon.

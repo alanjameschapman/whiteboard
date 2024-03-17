@@ -15,7 +15,6 @@ from django.urls import reverse_lazy
 from .models import Post, Comment, Enrolment
 from .forms import CommentForm, PostForm
 
-
 # Create your views here.
 
 class PostList(LoginRequiredMixin, generic.ListView):
@@ -211,6 +210,9 @@ def create_post(request):
         form = PostForm()
     return render(request, 'edblog/create_post.html', {'form': form})
 
+
+def custom_404(request, exception):
+    return render(request, '404.html', status=404)
 
 # @csrf_exempt
 # def comment_approve(request, slug, comment_id):
