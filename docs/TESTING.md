@@ -11,7 +11,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 
 | As a user I can... | ...so that I can... | Checked | Issue |
 | - | - | :-: | :-: |
-| view all posts summarized | browse topics | &check;
+| view all posts summarized | browse topics | &check; | [issue #23](https://github.com/alanjameschapman/whiteboard/issues/23)
 
 | As a teacher I can... | Checked | Issue |
 | - | :-: | :-: |
@@ -28,7 +28,7 @@ The responsiveness to different screen sizes was checked throughout the project.
 
 | Stage | iPhone 6/7/8 | iPad | Laptop
 | :-: | :-: | :-: | :-: |
-| MVP | ![MVPiPhone678](/docs/testing/response/MVP/iPhone678.png) | ![MVPiPad](/docs/testing/response/MVP/iPadAir.png) | ![MVPMacBookAir](/docs/testing/response/MVP/MacBookAir.png)
+| MVP | ![MVPiPhone678](/docs/testing/response/mvp/iphone678.png) | ![MVPiPad](/docs/testing/response/mvp/ipadair.png) | ![MVPMacBookAir](/docs/testing/response/mvp/macbookair.png)
 | Final | 
 
 ### Browser Compatibility
@@ -63,22 +63,44 @@ Browser compatibility was tested throughout the project as shown below. Using th
 | --- | --- | --- | --- | --- |
 
 ### Lighthouse
-WAVE and Web Disability Simulator. Disable extensions if they interfere. incognito mode?
+
+WAVE and Web Disability Simulator. Disable extensions if they interfere. incognito mode? Mobile AND desktop?!
+
 ### Code Validation
+
+#### HTML
+
 HTML - https://validator.w3.org/
+
+| Page | W3C URL | screenshot | Pass |
+| - | - | - | - |
+| | | | &check; |
+
+#### CSS
 
 CSS - https://jigsaw.w3.org/css-validator/
 
+#### JavaScript
+
 JavaScript - https://jshint.com/
+
+| File | Screenshot | Description | Pass |
+| - | - | - | - |
+| | | | &check; |
+
+#### Python
 
 Python - http://pep8online.com/
 
+| File | Screenshot | Description | Pass |
+| - | - | - | - |
+| | | | &check; |
 
 ### Features
 
 | Feature | Test | Outcome |
 | - | - | - |
-|
+| | | &check; |
 
 Tables and screenshots of feature testing - Feature, Action and Effect. Expected outcome vs actual outcome.
 

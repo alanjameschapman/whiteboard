@@ -77,6 +77,19 @@ It was deemed necessary that peers should be able to reset their password so thi
 
 ![sprint3_plan](/docs/sprints/sprint3_plan.png)
 
+At the end of sprint 3, it was calculated that with 20 hours of work, 11 user story points were completed, giving a velocity of 11/20 = 0.55 pts/hr. NB. this doesn't account for [bug #39](https://github.com/alanjameschapman/whiteboard/issues/39) which took around 4 hours to resolve.
+
+Any open issues were moved to the backlog and downgraded to could-haves. The only exception is [issue #40](https://github.com/alanjameschapman/whiteboard/issues/40) for implementing custom error pages.
+
+![sprint3_complete](/docs/sprints/sprint3_complete.png)
+
+### Minutes from Mentor Meeting 3
+
+- Custom error pages could be resolved by adding 'handlers' to project urls.py
+- Console errors on page load due to Cloudinary and can be fixed by a couple of lines in base.html 'head' section
+- User groups could be implemented in admin panel so teachers can log in and have limited functionality such as creating sets and moderating comments
+- Focus on post draft functionality, by either remove draft button from edit_post template or ensuring drafts appear frontend.
 
 ## Sprint 4 - ends with Submit Full Stack Toolkit Portfolio Project
 
+Sprint 4 focused on completing the readme and testing documentation.
