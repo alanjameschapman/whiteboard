@@ -150,6 +150,16 @@ body {
     background: #E84610;
 }
 
+.post-delete {
+    color: #fff;
+    background: #E84610;
+}
+
+.comment-delete {
+    color: #fff;
+    background: #E84610;
+}
+
 .btn-like:hover,
 .btn-like:active {
     color: #E84610;

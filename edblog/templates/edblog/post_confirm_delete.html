@@ -8,7 +8,7 @@
       <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
       <form method="post">
         {% csrf_token %}
-        <input class="btn btn-delete" type="submit" value="Confirm">
+        <input class="btn post-delete" type="submit" value="Confirm">
         <a class="btn btn-signup" href="{% url 'post_detail' object.slug %}">Cancel</a>
       </form>
     </div>

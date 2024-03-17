@@ -33,7 +33,7 @@
                         <button class="btn btn-edit"
                             onclick="location.href='{% url 'post_edit' slug=post.slug %}';">Edit
                         </button>
-                        <button class="btn btn-delete"
+                        <button class="btn post-delete"
                             onclick="location.href='{% url 'post_delete' slug=post.slug %}';">Delete
                         </button>
                     </div>
@@ -79,7 +79,7 @@
                     </p>
                     {% endif %}
                     {% if user.is_authenticated and comment.author == user %}
-                    <button class="btn btn-delete" data-comment_id="{{ comment.id }}">Delete</button>
+                    <button class="btn comment-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
                     <!-- {% if user.is_authenticated and user.teacher %}
