@@ -7,31 +7,6 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("comment-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
-const approveCommentButtons = document.getElementsByClassName("btn-approve");
-
-// Function to get a cookie by name.
-/**
- * Retrieves cookie and saves the contained csrf token to a variable for later use
- * Code Taken from Django docs https://docs.djangoproject.com/en/3.2/ref/csrf/
- */
-// function getCookie(name) {
-//   let cookieValue = null;
-//   if (document.cookie && document.cookie !== "") {
-//     const cookies = document.cookie.split(";");
-//     for (let i = 0; i < cookies.length; i++) {
-//       const cookie = cookies[i].trim();
-//       // Does this cookie string begin with the name we want?
-//       if (cookie.substring(0, name.length + 1) === name + "=") {
-//         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
-//         break;
-//       }
-//     }
-//   }
-//   return cookieValue;
-// }
-// const csrftoken = getCookie("csrftoken");
-// console.log("CSRF Token: ", csrftoken);
-
 /*
  * Initializes edit functionality for the provided edit buttons.
  *
@@ -73,37 +48,75 @@ for (let button of deleteButtons) {
   });
 }
 
-// // For each "Approve" button:
-// for (let button of approveCommentButtons) {
-//   // Add a click event listener.
-//   button.addEventListener("click", (e) => {
-//     console.log("Button clicked");
-//     // Prevent the default action.
-//     e.preventDefault();
+// Function to get a cookie by name.
+/**
+ * Retrieves cookie and saves the contained csrf token to a variable for later use
+ * Code Taken from Django docs https://docs.djangoproject.com/en/3.2/ref/csrf/
+ */
+function getCookie(name) {
+  let cookieValue = null;
+  if (document.cookie && document.cookie !== "") {
+    const cookies = document.cookie.split(";");
+    for (let i = 0; i < cookies.length; i++) {
+      const cookie = cookies[i].trim();
+      // Does this cookie string begin with the name we want?
+      if (cookie.substring(0, name.length + 1) === name + "=") {
+        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+        break;
+      }
+    }
+  }
+  return cookieValue;
+}
+const csrftoken = getCookie("csrftoken");
+console.log("CSRF Token: ", csrftoken);
 
-//     // Get the ID of the comment to be approved.
-//     let commentId = e.target.getAttribute("data-comment_id");
-//     console.log("Comment ID: ", commentId);
+// Get all "Approve" buttons.
+const approveCommentButtons = document.getElementsByClassName("btn-approve");
 
-//     // Send a request to the server to approve the comment.
-//     fetch(`/comment_approve/${commentId}/`, {
-//       method: "POST",
-//       headers: {
-//         "Content-Type": "application/json",
-//         // Include your CSRF token in the request header.
-//         "X-CSRFToken": getCookie("csrftoken"),
-//       },
-//       body: JSON.stringify({ commentId: commentId }),
-//     })
-//       .then((response) => response.json())
-//       .then((data) => {
-//         // Update the comment's status in the UI.
-//         if (data.success) {
-//           e.target.innerText = "Approved";
-//           e.target.disabled = true;
-//         } else {
-//           alert("Error approving comment.");
-//         }
-//       });
-//   });
-// }
+// For each "Approve" button:
+for (let button of approveCommentButtons) {
+  // Add a click event listener.
+  button.addEventListener("click", (e) => {
+    console.log("Button clicked");
+    // Prevent the default action.
+    e.preventDefault();
+
+    // Get the ID of the comment to be approved.
+    let commentId = e.target.getAttribute("data-comment_id");
+    console.log("Comment ID: ", commentId);
+
+    // Send a request to the server to approve the comment.
+    fetch(`/comment_approve/${commentId}/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        // Include your CSRF token in the request header.
+        "X-CSRFToken": getCookie("csrftoken"),
+      },
+      body: JSON.stringify({ commentId: commentId }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        // Update the comment's status in the UI.
+        if (data.success) {
+          e.target.innerText = "Approved";
+          e.target.disabled = true;
+          const statusElement = document.querySelector(`#status-${commentId}`);
+          if (statusElement) {
+            statusElement.remove();
+          }
+          const commentDiv = document.querySelector(`#comment-div-${commentId}`);
+          if (commentDiv) {
+            commentDiv.classList.remove('d-none');
+            commentDiv.classList.remove('faded');
+          }
+          const countElement = document.getElementById('comment-count');
+          if (countElement) {
+            const count = parseInt(countElement.innerText, 10);
+            countElement.innerText = (isNaN(count) ? 0 : count) + 1;
+          }
+        }
+      });
+  });
+}

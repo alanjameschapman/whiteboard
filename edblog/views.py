@@ -9,11 +9,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.template.defaultfilters import slugify
 from django.views import generic
-# from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.csrf import csrf_exempt
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Post, Comment, Enrolment
 from .forms import CommentForm, PostForm
+from django.http import HttpResponse, JsonResponse
 
 # Create your views here.
 
@@ -218,22 +219,22 @@ def create_post(request):
 def custom_404(request, exception):
     return render(request, '404.html', status=404)
 
-# @csrf_exempt
-# def comment_approve(request, slug, comment_id):
-#     """
-#     Approve an individual :model:`edblog.Comment`.
+@csrf_exempt
+def comment_approve(request, comment_id):
+    """
+    Approve an individual :model:`edblog.Comment`.
 
-#     **Context**
+    **Context**
 
-#     ``post``
-#         An instance of :model:`edblog.Post`.
-#     ``comment``
-#         An instance of :model:`edblog.Comment`.
-#     """
-#     comment = get_object_or_404(Comment, id=comment_id)
-#     if request.method == 'POST':
-#         comment.approved_comment = True
-#         comment.save()
-#         return redirect('post_detail', slug=comment.post.slug)
-#     else:
-#         return HttpResponse('Invalid request method', status=405)
+    ``post``
+        An instance of :model:`edblog.Post`.
+    ``comment``
+        An instance of :model:`edblog.Comment`.
+    """
+    comment = get_object_or_404(Comment, id=comment_id)
+    if request.method == 'POST':
+        comment.approved = True
+        comment.save()
+        return JsonResponse({'success': True})
+    else:
+        return HttpResponse('Invalid request method', status=405)

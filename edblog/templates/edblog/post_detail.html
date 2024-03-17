@@ -25,7 +25,6 @@
         <div class="col card mb-4 mt-3 left top dropshadow">
             <div class="card-body">
                 <!-- The post content goes inside the card-text. -->
-                <!-- Use the | safe filter inside the template tags -->
                 <article class="card-text">
                     {{ post.content | safe }}
                     {% if request.user == post.author %}
@@ -46,7 +45,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-comments"></i> {{ comment_count }}
+                <i class="far fa-comments"></i> <span id="comment-count">{{ comment_count }}</span>
             </strong>
         </div>
         <div class="col-12">
@@ -58,12 +57,9 @@
         <div class="col-md-8 card mb-4 mt-3 ">
             <h3>Comments:</h3>
             <div class="card-body">
-                <!-- We want a for loop inside the empty control tags
-          to iterate through each comment in comments -->
+                <!-- Loop inside the empty control tags to iterate through each comment in comments -->
                 {% for comment in comments %}
-                <div class="p-2 comments
-          {% if not comment.approved and comment.author == user %}
-          faded{% elif not comment.approved %} d-none{% endif %}">
+                <div id="comment-div-{{ comment.id }}" class="p-2 comments {% if not comment.approved and comment.author == user %} faded{% elif not comment.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
                         {{ comment.author }}
                         <span class="font-weight-normal">
@@ -74,7 +70,7 @@
                         {{ comment.content | linebreaks }}
                     </div>
                     {% if not comment.approved and comment.author == user %}
-                    <p class="approval">
+                    <p id="status-{{ comment.id }}" class="approval">
                         This comment is awaiting approval
                     </p>
                     {% endif %}
@@ -82,10 +78,9 @@
                     <button class="btn comment-delete" data-comment_id="{{ comment.id }}">Delete</button>
                     <button class="btn btn-edit" data-comment_id="{{ comment.id }}">Edit</button>
                     {% endif %}
-                    <!-- {% if user.is_authenticated and user.teacher %}
-                    <button class="btn btn-approve" data-comment_id="{{ comment.id }}"
-                        id="approveButton">Approve</button>
-                    {% endif %} -->
+                    {% if user.is_authenticated and user.teacher and not comment.approved %}
+                    <button class="btn btn-approve" data-comment_id="{{ comment.id }}">Approve</button>
+                    {% endif %}
                 </div>
                 {% endfor %}
             </div>
@@ -109,7 +104,7 @@
     </div>
 </div>
 
-<!-- Delete confirmation modal -->
+<!-- Delete comment confirmation modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

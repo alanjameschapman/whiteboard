@@ -12,6 +12,5 @@ urlpatterns = [
          views.comment_delete, name='comment_delete'),
     path('<slug:slug>/edit/', PostUpdateView.as_view(), name='post_edit'),
     path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name='post_delete'),
-#     path('<slug:slug>/comment_approve/<int:comment_id>/',
-#          views.comment_approve, name='comment_approve'),
+    path('comment_approve/<int:comment_id>/', views.comment_approve, name='comment_approve'),
 ]

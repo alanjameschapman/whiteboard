@@ -7,7 +7,7 @@ const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("comment-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
 
-const approveCommentButtons = document.getElementsByClassName("btn-approve");
+const approveCommentButtons = document.getElementsByClassName("e");
 
 // Function to get a cookie by name.
 /**
