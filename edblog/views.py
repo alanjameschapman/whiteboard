@@ -107,6 +107,9 @@ def post_detail(request, slug):
             comment = comment_form.save(commit=False)
             comment.author = request.user
             comment.post = post
+            # If the user is a teacher, automatically approve the comment
+            if hasattr(request.user, 'teacher'):
+                comment.approved = True
             comment.save()
             messages.add_message(
                 request, messages.SUCCESS,
@@ -150,7 +153,10 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            comment.approved = False
+            if request.user.teacher:  # assuming `teacher` is a boolean field in User model
+                comment.approved = True
+            else:
+                comment.approved = False
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
