@@ -160,6 +160,13 @@ body {
     background: #E84610;
 }
 
+.comments {
+    border: 1px solid #BFD7EA; /* Change the color as needed */
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px; /* Optional: to make the corners rounded */
+}
+
 .btn-like:hover,
 .btn-like:active {
     color: #E84610;
