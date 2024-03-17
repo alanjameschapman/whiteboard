@@ -31,7 +31,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
         # Check if the user has a related Teacher instance
         if hasattr(self.request.user, 'teacher'):
             # Get the posts authored by the teacher
-            return Post.objects.filter(author=self.request.user, status=1).order_by('-created_on')
+            return Post.objects.filter(author=self.request.user).order_by('-created_on')
         elif hasattr(self.request.user, 'student'):
             # Get the enrolments for the student
             enrolments = Enrolment.objects.filter(student=self.request.user.student)
@@ -88,7 +88,14 @@ def post_detail(request, slug):
     :template:`edblog/post_detail.html`
     """
 
-    queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
+    # If the user is a teacher, they can see all posts
+    if hasattr(request.user, 'teacher'):
+        queryset = Post.objects.all() # pylint: disable=no-member
+    # Otherwise, only show published posts
+    else:
+        queryset = Post.objects.filter(status=1) # pylint: disable=no-member
+
+    # queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
@@ -194,10 +201,7 @@ def create_post(request):
             post = form.save(commit=False)  # Don't save the form to the database yet
             post.author = request.user  # Set the author field to the current user
             post.slug = slugify(post.title)
-            if 'submit' in request.POST:
-                post.status = 1 # publish the post
-            elif 'save_draft' in request.POST:
-                post.status = 0 # save the post as a draft
+            post.status = form.cleaned_data['status']  # Set the status based on the form input
             try:
                 post.save()  # Try to save the form to the database
             except IntegrityError as e: # If the slug is not unique, add an error to the form

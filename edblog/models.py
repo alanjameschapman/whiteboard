@@ -6,7 +6,6 @@ from django.db import models
 from django.utils.text import slugify
 from cloudinary.models import CloudinaryField
 
-
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
@@ -15,6 +14,9 @@ class Post(models.Model):
     Stores a single blog post entry related to :model:`auth.User`.
     """
 
+    # used to set the status of the post 
+    STATUS = ((0, "Draft"), (1, "Published"))
+    
     title = models.CharField(
         max_length=200,
         unique=True,
