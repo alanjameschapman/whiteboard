@@ -19,7 +19,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 | edit or delete my comments | amend my comments | &check; | [28](https://github.com/alanjameschapman/whiteboard/issues/28) |
 | reply to comments | engage in discussions | &check; | [26](https://github.com/alanjameschapman/whiteboard/issues/26) |
 
-#### Teacher
+#### Teachers
 
 | As a teacher I can... | ...so that I can... | Checked | Issue# |
 | - | - | :-: | :-: |

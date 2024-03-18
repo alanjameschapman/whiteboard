@@ -109,11 +109,196 @@ Infinite scroll of blog posts was discounted because it tends to be used for aim
 # Features
 
 ## Implemented
-- “if comment.author == request.user:” in view is used to check at the back-end for authorship.
-- Use metadata for enhanced superuser UX in admin panel.
-- Pros and cons of classes vs functions.
+
+The website can only be accessed by registered users. The following features are available across the site:
+
+### All Pages
+
+#### Navbar
+
+The navbar is present on all screens and is responsive to different screen sizes. It is not fixed to the top of the page because it is not necessary to be visible at all times.
+To minimise user clicks, a 'burger bun' is not used because there is enough space to display the logo and links, even for mobile devices.
+
+| Teacher | Student |
+| :-: | :-: |
+| ![navbar-teacher](/docs/features/navbar-teacher.png) | ![navbar-student](/docs/features/navbar-student.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Logo | Link to the home page | Both
+| Logout | Link to Logout confirmation screen | Both
+| Post | Link to create new post | Teacher
+| Django Message | Dismissable message confirming user action | Both |
+| User status | Permanent message advising which user is logged in | Both |
+
+#### Footer
+
+The footer is applied to all screens and is responsive to different screen sizes. It is not fixed to the bottom of the page because it is not necessary to be visible at all times.
+
+| Both Users |
+| :-: |
+| ![footer](/docs/features/footer.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| GitHub icon | Link to the author's GitHub profile | Both
+| LinkedIn icon | Link to the author's LinkedIn profile | Both
+
+### Register (register.html)
+
+The register screen allows the user to register for the site. The user can enter their username, email and password, and click the register button.
+
+| Both Users |
+| :-: |
+| ![register](/docs/features/register.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Login link | Link to login | Both |
+| Username | Input for username | Both |
+| Email (optional) | Input for email | Both |
+| Password | Input for password | Both |
+| Password confirmation | Input for password confirmation | Both |
+| Sign Up button | Link to sign up | Both |
+
+### Login (login.html)
+
+The login screen allows the user to log in to the site. The user can enter their username and password, and click the login button. The user can also click the register link to register for the site.
+
+| Both Users |
+| :-: |
+| ![login](/docs/features/login.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Register link | Link to register | Both |
+| Username | Input for username | Both |
+| Password | Input for password | Both |
+| Login button | Link to login | Both |
+
+### Home (index.html)
+
+The home screen is the first screen the user sees when they log in. It displays the last 9 posts, with the most recent at the top. The user can click on the post to view the full content or click through to the next 9 posts.
+
+For a teacher, it displays all published and draft posts they have created.
+
+For a student, it displays only the published posts for the classes that the student has been enroled in.
+
+| Teacher | Student |
+| :-: | :-: |
+| ![home-teacher](/docs/features/home-teacher.png) | ![home-student](/docs/features/home-student.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Post card (published) | Summary of post | Both |
+| Post card (draft) | Summary of post | Teacher |
+| Post title | Title of post | Both |
+| Post set | Set of post | Both |
+| Post author | Author of post | Both |
+| Post excerpt | Excerpt of post | Both |
+| Post date | Date of post | Both |
+| Pagination | Links to older posts | Both |
+
+### Post Detail (post_detail.html)
+
+The post detail screen displays the full content of the post. The user can comment on the post, and view approved comments made by other users. The teacher can edit or delete the post. The teacher can also approve comments made by students. Unapproved comments appear faded and student are marked as 'awaiting approval'.
+
+| Teacher | Student |
+| :-: | :-: |
+| ![post-detail-teacher](/docs/features/post-detail-teacher.png) | ![post-detail-student](/docs/features/post-detail-student.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Post title | Title of post | Both |
+| Post set | Set of post | Both |
+| Post author | Author of post | Both |
+| Post content | Full content of post | Both |
+| Edit post button | Link to edit post | Teacher |
+| Delete post button | Link to delete post | Teacher |
+| Comment count | Number of approved comments | Both |
+| Comment card | All approved comments | Both |
+| Comment form | Form to add a comment | Both |
+| Edit comment button | Link to edit comment | Author |
+| Delete comment button | Link to delete comment | Author |
+| Approve comment button | Link to approve comment | Teacher |
+
+### Post Create (post_create.html)
+
+The post create screen allows the teacher to create a new post. The teacher can add a title, set, content and tags. The teacher can also save the post as a draft, or publish it immediately.
+
+| Teacher |
+| :-: |
+| ![post-create](/docs/features/post-create.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Post title | Title of post | Teacher |
+| Post subject | Subject of post | Teacher
+| Post set | Set of post | Teacher |
+| Featured image | Retain default image or upload custom image | Teacher
+| Post content | Full content of post | Teacher |
+| Status | Set status of draft before submitting | Teacher
+| Submit button | Submit post | Teacher
+| Cancel button | Cancel post creation | Teacher
+
+### Post Update (post_update.html)
+
+The post update screen allows the teacher to update an existing post. The teacher can edit the title, set, content and tags. The teacher can also save the post as a draft, or publish it immediately.
+
+| Teacher |
+| :-: |
+| ![post-update](/docs/features/post-update.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Post title | Title of post | Teacher |
+| Post subject | Subject of post | Teacher
+| Post set | Set of post | Teacher |
+| Featured image | Retain default image or upload custom image | Teacher
+| Post content | Full content of post | Teacher |
+| Status | Set status of draft before submitting | Teacher
+| Submit button | Submit post | Teacher
+| Cancel button | Cancel post creation | Teacher
+
+### Post Confirm Delete (post_confirm_delete.html)
+
+The post confirm delete screen allows the teacher to confirm they want to delete a post.
+
+| Teacher |
+| :-: |
+| ![post-confirm-delete](/docs/features/post-confirm-delete.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Delete button | Link to delete post | Teacher |
+| Cancel button | Link to cancel delete and return to post | Teacher |
+
+
+### Logout (logout.html)
+
+The logout screen allows the user to log out of the site. The user can click the logout button to confirm they want to log out or click the whiteboard logo to return home.
+
+| Both Users |
+| :-: |
+| ![logout](/docs/features/logout.png) |
+
+| Element | Description | Visibility |
+| - | - | - |
+| Sign Out button | Link to logout | Both |
+
+### Admin panel
+
+Metadata has been used to enhanced UX in admin panel.
+
+| Superuser | Teacher |
+| :-: | :-: |
+| ![admin-panel-superuser](/docs/features/admin-panel-superuser.png) | ![admin-panel-teacher](/docs/features/admin-panel-teacher.png) |
 
 ## Not implemented yet...
+
+| Issue# | Wireframe | Implementation
+| :-: | :-: | - |
+|
 
 # Technologies
 
