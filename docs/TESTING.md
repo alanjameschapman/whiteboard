@@ -1,26 +1,43 @@
 # Testing
 ## Manual Testing
 
+### User Stories
+
 User Stories were assessed and checked, categorised as superuser (headteacher/admin/IT dept), teacher and student, which are both a subset of a user.
 
 These were tracked throughout the project as GitHub issues. Links are provided to see the development notes and screenshots for each.
 
-| As a superuser I can... | ...so that I can... | Checked | Issue |
+#### Users (Teachers and Students)
+
+| As a user I can... | ...so that I can... | Checked | Issue# |
 | - | - | :-: | :-: |
-| manage available post fields | standardise and structure posts | &check;
+| view all posts summarized | browse topics | &check; | [23](https://github.com/alanjameschapman/whiteboard/issues/23) |
+| register and log in/out with username and password | access the site | &check; | [4](https://github.com/alanjameschapman/whiteboard/issues/4) |
+| comment on posts | ask questions to the teacher/student | &check; | [9](https://github.com/alanjameschapman/whiteboard/issues/9) |
+| view comments on posts | see discussions relating to a specific post | &check; | [21](https://github.com/alanjameschapman/whiteboard/issues/21) |
+| view post detail | read the content for a given topic | &check; | [27](https://github.com/alanjameschapman/whiteboard/issues/27) |
+| edit or delete my comments | amend my comments | &check; | [28](https://github.com/alanjameschapman/whiteboard/issues/28) |
+| reply to comments | engage in discussions | &check; | [26](https://github.com/alanjameschapman/whiteboard/issues/26) |
 
-| As a user I can... | ...so that I can... | Checked | Issue |
+#### Teacher
+
+| As a teacher I can... | ...so that I can... | Checked | Issue# |
 | - | - | :-: | :-: |
-| view all posts summarized | browse topics | &check; | [issue #23](https://github.com/alanjameschapman/whiteboard/issues/23)
+| post content | provide information to students on a topic of my choice | &check; | [16](https://github.com/alanjameschapman/whiteboard/issues/16) |
+| delete content | remove outdated or incorrect information | &check; | [18](https://github.com/alanjameschapman/whiteboard/issues/18) |
+| update posts | correct or update information | &check; | [17](https://github.com/alanjameschapman/whiteboard/issues/17) |
+| use Rich Text Formatting | create engaging content | &check; | [15](https://github.com/alanjameschapman/whiteboard/issues/15) |
+| post draft content | complete the post at a later date | &check; | [19](https://github.com/alanjameschapman/whiteboard/issues/19) |
+| moderate student comments | ensure appropriate content | &check; | [8](https://github.com/alanjameschapman/whiteboard/issues/8) |
+| accept or deny requests from students | control which students can access/comment on my posts | &check; | [5](https://github.com/alanjameschapman/whiteboard/issues/5) |
+| moderate comments frontend | speed up the comment approval process | &check; | [35](https://github.com/alanjameschapman/whiteboard/issues/35) |
 
-| As a teacher I can... | Checked | Issue |
-| - | :-: | :-: |
-| iew all posts summarized | &check;
+#### Superusers
 
-| As a student I can... | Checked | Issue |
-| - | :-: | :-: |
-| View all posts summarized | &check;
-
+| As a superuser I can... | ...so that I can... | Checked | Issue# |
+| - | - | :-: | :-: |
+| manage available post fields | standardise and structure posts | &check; | [1](https://github.com/alanjameschapman/whiteboard/issues/1) |
+| 
 
 ### Responsiveness
 
@@ -59,8 +76,9 @@ Browser compatibility was tested throughout the project as shown below. Using th
 
 #### Unresolved
 
-| # | Problem | Screenshot | Solution | Screenshot |
-| --- | --- | --- | --- | --- |
+| Issue# | Problem | Screenshot | Comment |
+| --- | --- | --- | --- |
+[36](https://github.com/alanjameschapman/whiteboard/issues/36) | password reset not working | ![#36](/docs/issues/36-1.png) | This bug and associated [Issue#7](https://github.com/alanjameschapman/whiteboard/issues/7) for password reset moved to backlog for future development. |
 
 ### Lighthouse
 
