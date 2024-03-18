@@ -288,17 +288,29 @@ The logout screen allows the user to log out of the site. The user can click the
 
 ### Admin panel
 
-Metadata has been used to enhanced UX in admin panel.
+The admin panel is accessible by superusers and teachers. The intention is that:
+- the superuser (school admin/IT) will be responsible for creating teachers and students from the users registered on the site. Alternatively, the superuser could create the users directly and notify students of their login details, but this would require a secure method of communication.
+- the teacher will be responsible for creating the sets and subjects that they teach, and enrolling students in their sets.
+
+The admin panel has been customised by registering models via the admin.py and specifying displays, fields and filters among others. Furthermore, a teacher group has been created and assigned permissions to manage posts, comments, sets, subjects, students and enrolments.
 
 | Superuser | Teacher |
 | :-: | :-: |
 | ![admin-panel-superuser](/docs/features/admin-panel-superuser.png) | ![admin-panel-teacher](/docs/features/admin-panel-teacher.png) |
 
-## Not implemented yet...
+## Not implemented...yet
 
-| Issue# | Wireframe | Implementation
-| :-: | :-: | - |
-|
+| Issue# | User Story | Wireframe |
+| :-: | - | :-: |
+| [24](https://github.com/alanjameschapman/whiteboard/issues/24) | As a user I can search for content so that I can quickly find help on any given topic. | ![wireframe](/docs/features/search.png) |
+| [14](https://github.com/alanjameschapman/whiteboard/issues/14) | As a teacher I can tag content so that I can enable students to search for a specific topic or skill | ![wireframe](/docs/features/tags.png) |
+| [22](https://github.com/alanjameschapman/whiteboard/issues/22) | As a user I can bookmark topics so that I can quickly find saved content. | ![wireframe](/docs/features/bookmarks.png) |
+| [2](https://github.com/alanjameschapman/whiteboard/issues/2) | As a teacher I can set quizzes so that I can assess my students' understanding. | ![wireframe](/docs/features/quiz-teacher.png) |
+| [3](https://github.com/alanjameschapman/whiteboard/issues/3) | As a student I can answer quizzes so that I can get feedback on my understanding on a given topic. | ![wireframe](/docs/features/quiz-student.png) |
+| [7](https://github.com/alanjameschapman/whiteboard/issues/7) | As a user I can reset my password so that I can access the site if I have forgotten my password. |  User clicks 'forgot password' button, then enters email, then receives email to reset password, then inputs new password (twice), then updates authentication details. |
+| [41](https://github.com/alanjameschapman/whiteboard/issues/41) | As a teacher I can enrol student frontend so that I can provide content to relevant users. | ![wireframe](/docs/features/enrolment.png) |
+| [6](https://github.com/alanjameschapman/whiteboard/issues/6) | As a user I can log in with email/socials so that I can access the site. |  User can select Google, Twitter or Facebook, then notified of login. |
+| [20](https://github.com/alanjameschapman/whiteboard/issues/20) | As a user I can update my user profile so that I can personalise my UX. | ![wireframe](/docs/features/profile.png) |
 
 # Technologies
 
