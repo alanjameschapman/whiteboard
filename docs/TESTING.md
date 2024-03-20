@@ -39,6 +39,26 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 | manage available post fields | standardise and structure posts | &check; | [1](https://github.com/alanjameschapman/whiteboard/issues/1) |
 | 
 
+### User Input Validation
+
+Every user input was validated for various incorrect inputs throughout the project. Results for the final site are shown below.
+
+
+| Page | Input | Test | Outcome | Screenshot | Pass |
+| - | - | - | - | - | - |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | username | no username | prompt to fill in field | ![register-nousername](/docs/testing/register-nousername.png) | &check; |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | username | username already exists | prompt to choose another username | ![register-usernameexists](/docs/testing/register-usernameexists.png) | &check; |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | email | bad email | prompt to enter a valid email | ![register-bademail](/docs/testing/register-bademail.png) | &check; |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | password | no password | prompt to fill in field | ![register-nopassword](/docs/testing/register-nopassword.png) | &check; |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | password | bad password | prompt to choose another password with criteria reiterated | ![register-badpassword](/docs/testing/register-badpassword.png) | &check; |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | password | password mismatch | prompt to enter matching passwords | ![register-passwordmismatch](/docs/testing/register-passwordmismatch.png) | &check; |
+| [login](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/login/) | username | no username | prompt to fill in field | ![login-nousername](/docs/testing/login-nousername.png) | &check; |
+| [login](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/login/) | password | no password | prompt to fill in field | ![login-nopassword](/docs/testing/login-nopassword.png) | &check; |
+| [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | title | no title | prompt to fill in field | ![create_post-notitle](/docs/testing/create_post-notitle.png) | &check; |
+| [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | title | title already exists | prompt to choose another title | ![create_post-titleexists](/docs/testing/create_post-titleexists.png) | &check; |
+| [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | content | no content | prompt to fill in field | ![create_post-nocontent](/docs/testing/create_post-nocontent.png) | &check; |
+
+
 ### Responsiveness
 
 The responsiveness to different screen sizes was checked throughout the project. Results for MVP and final site are shown below.

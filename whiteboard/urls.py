@@ -14,4 +14,4 @@ urlpatterns = [
     path("", include("edblog.urls"), name="edblog-urls"),
 ]
 
-handler404 = 'edblog.views.custom_404'
+# handler404 = 'edblog.views.custom_404'
