@@ -106,7 +106,6 @@ def post_detail(request, slug):
     else:
         queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
 
-    # queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()

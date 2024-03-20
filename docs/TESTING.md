@@ -10,7 +10,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 #### Users (Teachers and Students)
 
 | As a user I can... | ...so that I can... | Checked | Issue# |
-| - | - | :-: | :-: |
+| :- | :- | :-: | :-: |
 | view all posts summarized | browse topics | &check; | [23](https://github.com/alanjameschapman/whiteboard/issues/23) |
 | register and log in/out with username and password | access the site | &check; | [4](https://github.com/alanjameschapman/whiteboard/issues/4) |
 | comment on posts | ask questions to the teacher/student | &check; | [9](https://github.com/alanjameschapman/whiteboard/issues/9) |
@@ -22,7 +22,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 #### Teachers
 
 | As a teacher I can... | ...so that I can... | Checked | Issue# |
-| - | - | :-: | :-: |
+| :- | :- | :-: | :-: |
 | post content | provide information to students on a topic of my choice | &check; | [16](https://github.com/alanjameschapman/whiteboard/issues/16) |
 | delete content | remove outdated or incorrect information | &check; | [18](https://github.com/alanjameschapman/whiteboard/issues/18) |
 | update posts | correct or update information | &check; | [17](https://github.com/alanjameschapman/whiteboard/issues/17) |
@@ -35,7 +35,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 #### Superusers
 
 | As a superuser I can... | ...so that I can... | Checked | Issue# |
-| - | - | :-: | :-: |
+| :- | :- | :-: | :-: |
 | manage available post fields | standardise and structure posts | &check; | [1](https://github.com/alanjameschapman/whiteboard/issues/1) |
 
 ### User Input Validation
@@ -79,7 +79,7 @@ Browser compatibility was tested throughout the project as shown below. Using th
 | Stage | Chrome | Firefox | Safari
 | :-: | :-: | :-: | :-: |
 | MVP | &check; | &check; | &check; |
-| Final | 
+| Final | &check; | &check; | &check; |
 
 ### Bugs
 
@@ -88,7 +88,7 @@ Bugs were tracked throughout the project as GitHub issues. Links are provided to
 #### Resolved
 
 | Issue | Problem | Screenshot | Solution | Screenshot |
-| --- | --- | --- | --- | --- |
+| :-: | :-: | :-: | :-: | :-: |
 | [#29](https://github.com/alanjameschapman/whiteboard/issues/29) | Edit button not populating comment box for editing | ![#29](/docs/issues/29-1.png) | Javascript amended from "id_body" to "id_content | ![#29](/docs/issues/29-2.png) |
 | [#30](https://github.com/alanjameschapman/whiteboard/issues/30) | New create_post template not rendering | <img width="638" alt="Screenshot 2024-03-06 at 10 04 01" src="https://github.com/alanjameschapman/whiteboard/assets/137620143/92e38f97-34e0-48dc-bbad-0bfbaf739215"> | Ordering of edblog/urls.py amended from most specific to least specific | <img width="638" alt="Screenshot 2024-03-06 at 10 04 47" src="https://github.com/alanjameschapman/whiteboard/assets/137620143/53372de8-e38c-4516-b7ab-4d9f4021fb5b"> |
 | [#31](https://github.com/alanjameschapman/whiteboard/issues/31) | Duplicate titles cause IntegrityError | ![#31](/docs/issues/31-1.png) | Update create_post function in views | ![#31](/docs/issues/31-2.png) |
@@ -103,7 +103,7 @@ Bugs were tracked throughout the project as GitHub issues. Links are provided to
 The only unresolved bug is the password reset not working. This does not affect the website functionality because the admin can reset passwords manually.
 
 | Issue# | Problem | Screenshot | Comment |
-| --- | --- | --- | --- |
+| :-: | :-: | :-: | :-: |
 [36](https://github.com/alanjameschapman/whiteboard/issues/36) | password reset not working | ![#36](/docs/issues/36-1.png) | This bug and associated [Issue#7](https://github.com/alanjameschapman/whiteboard/issues/7) for password reset moved to backlog for future development. |
 
 ### Lighthouse
@@ -121,7 +121,6 @@ Page | Mobile | Desktop | Comment |
 | [post_confirm_delete](https://whiteboard-app-742f545f1848.herokuapp.com/post_confirm_delete/1/) | ![post_confirm_delete-mobile](/docs/testing/lighthouse/post_confirm_delete-mobile.png) | ![post_confirm_delete-desktop](/docs/testing/lighthouse/post_confirm_delete-desktop.png) | None |
 | [logout](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/logout/) | ![logout-mobile](/docs/testing/lighthouse/logout-mobile.png) | ![logout-desktop](/docs/testing/lighthouse/logout-desktop.png) | None |
 
-
 ### Code Validation
 
 #### HTML
@@ -129,7 +128,7 @@ Page | Mobile | Desktop | Comment |
 [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files. The Django template language cannot be validated by URI using the W3C validator, so the HTML was copied and pasted into the direct input form for each page.
 
 | Page | W3C URL | Screenshot | Notes | Pass |
-| - | - | :-: | - | - |
+| :-: | :-: | :-: | :-: | :-: |
 | [register](/registration/signup.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Faccounts%2Fsignup%2F) | ![register](/docs/testing/register.png) | Errors relate to built-in Django form and don't affect UX or functionality. | &check; |
 | [login](/registration/login.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Faccounts%2Flogin%2F) | ![login](/docs/testing/login.png) | Errors relate to built-in Django form and don't affect UX or functionality. | &check; |
  [index](/edblog/templates/edblog/index.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2F) | ![index](/docs/testing/index.png) | None | &check; |
@@ -156,7 +155,7 @@ CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/cs
 [jshint](https://jshint.com/) was used to validate the only custom JavaScript file, [comments.js](/staticfiles/js/comments.js), used to edit, delete and approve comments.
 
 | File | Screenshot | Description | Pass |
-| - | - | - | - |
+| :-: | :-: | :-: | :-: |
 | [comments](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to comprehend. | &check; |
 
 #### Python
@@ -164,7 +163,7 @@ CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/cs
 [CI Python Linter](http://pep8online.com/) was used to validate the custom python files. No errors were found.
 
 | File | Screenshot | Pass |
-| - | - | - |
+| :-: | :-: | :-: |
 | [admin](/edblog/admin.py) | ![admin](/docs/testing/admin.png) | &check; |
 | [forms](/edblog/forms.py) | ![forms](/docs/testing/forms.png) | &check; |
 | [models](/edblog/models.py) | ![models](/docs/testing/models.png) | &check; |

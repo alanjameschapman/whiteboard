@@ -11,7 +11,7 @@ This project was developed and [documented](docs/AGILE.md) using Agile principle
 # 5 planes of User Experience
 The project was planned using the five planes of User Experience, as summarised below:
 
-![UX5planes](/docs/screenshots/UX5planes.png)
+![ux5planes](/docs/screenshots/ux5planes.png)
 
 ## Strategy
 
@@ -43,7 +43,7 @@ A review of [edublogs](https://edublogs.org/) which appears to be the dominant p
 
 The Entity Relationship Diagram (ERD) below shows how the database models will relate to each other.
 
-![ERD](/docs/ERD/whiteboard_ERD.png)
+![erd](/docs/erd/whiteboard_erd.png)
 
 **One-to-many relationships:**
 
@@ -235,7 +235,7 @@ The post create screen allows the teacher to create a new post. The teacher can 
 | ![post-create](/docs/features/post-create.png) |
 
 | Element | Description | Visibility |
-| - | - | - |
+| :- | :- | :- |
 | Post title | Title of post | Teacher |
 | Post subject | Subject of post | Teacher
 | Post set | Set of post | Teacher |
@@ -254,7 +254,7 @@ The post update screen allows the teacher to update an existing post. The teache
 | ![post-update](/docs/features/post-update.png) |
 
 | Element | Description | Visibility |
-| - | - | - |
+| :- | :- | :- |
 | Post title | Title of post | Teacher |
 | Post subject | Subject of post | Teacher
 | Post set | Set of post | Teacher |
@@ -273,7 +273,7 @@ The post confirm delete screen allows the teacher to confirm they want to delete
 | ![post-confirm-delete](/docs/features/post-confirm-delete.png) |
 
 | Element | Description | Visibility |
-| - | - | - |
+| :- | :- | :- |
 | Delete button | Link to delete post | Teacher |
 | Cancel button | Link to cancel delete and return to post | Teacher |
 
@@ -287,7 +287,7 @@ The logout screen allows the user to log out of the site. The user can click the
 | ![logout](/docs/features/logout.png) |
 
 | Element | Description | Visibility |
-| - | - | - |
+| :- | :- | :- |
 | Sign Out button | Link to logout | Both |
 
 ### Admin panel
@@ -305,7 +305,7 @@ The admin panel has been customised by registering models via the admin.py and s
 ## Not implemented...yet
 
 | Issue# | User Story | Wireframe |
-| :-: | - | :-: |
+| :-: | :-: | :-: |
 | [24](https://github.com/alanjameschapman/whiteboard/issues/24) | As a user I can search for content so that I can quickly find help on any given topic. | ![wireframe](/docs/features/search.png) |
 | [14](https://github.com/alanjameschapman/whiteboard/issues/14) | As a teacher I can tag content so that I can enable students to search for a specific topic or skill | ![wireframe](/docs/features/tags.png) |
 | [22](https://github.com/alanjameschapman/whiteboard/issues/22) | As a user I can bookmark topics so that I can quickly find saved content. | ![wireframe](/docs/features/bookmarks.png) |

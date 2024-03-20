@@ -51,8 +51,22 @@ class StudentAdmin(admin.ModelAdmin):
     list_filter = ('school', 'year', 'grade')
 
 
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    '''Admin View for Comment'''
+    list_display = ('post', 'author', 'content', 'created_on', 'approved')
+    search_fields = ['author', 'content']
+    list_filter = ('approved', 'author')
+
+    actions = ['approve_comments']
+
+    def approve_comments(self, _request, queryset):
+        '''Approve selected comments'''
+        queryset.update(approved=True)
+    approve_comments.short_description = "Approve selected comments"
+
+
 # Register your models here.
-admin.site.register(Comment)
 admin.site.register(School)
 admin.site.register(Subject)
 admin.site.register(Enrolment)
