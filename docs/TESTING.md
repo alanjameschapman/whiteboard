@@ -41,7 +41,7 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 
 ### User Input Validation
 
-Every user input was validated for various incorrect inputs throughout the project. Results for the final site are shown below.
+User inputs were validated for various incorrect inputs throughout the project. Results for the final site are shown below.
 
 
 | Page | Input | Test | Outcome | Screenshot | Pass |
@@ -57,7 +57,9 @@ Every user input was validated for various incorrect inputs throughout the proje
 | [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | title | no title | prompt to fill in field | ![create_post-notitle](/docs/testing/create_post-notitle.png) | &check; |
 | [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | title | title already exists | prompt to choose another title | ![create_post-titleexists](/docs/testing/create_post-titleexists.png) | &check; |
 | [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | content | no content | prompt to fill in field | ![create_post-nocontent](/docs/testing/create_post-nocontent.png) | &check; |
+| [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | image | bad image | prompt to upload a valid image | ![create_post-badimage](/docs/testing/create_post-badimage.png) | &check; |
 
+NB. the create_post form is the same as the edit_post form, so the same validation applies.
 
 ### Responsiveness
 
@@ -113,11 +115,11 @@ WAVE and Web Disability Simulator. Disable extensions if they interfere. incogni
 
 #### HTML
 
-HTML - https://validator.w3.org/
+[W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files. The Django template language cannot be validated by URI using the W3C validator, so the HTML was copied and pasted into the direct input form for each page.
 
 | Page | W3C URL | screenshot | Pass |
 | - | - | - | - |
-| | | | &check; |
+| [index](/edblog/templates/edblog/index.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2F) | ![index](/docs/testing/index.png) | &check; |
 
 #### CSS
 
@@ -154,14 +156,9 @@ CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/cs
 | [settings](/whiteboard/settings.py) | ![settings](/docs/testing/settings.png) | &check; |
 
 
-### Features
-
-| Feature | Test | Outcome |
-| - | - | - |
-| | | &check; |
-
-Tables and screenshots of feature testing - Feature, Action and Effect. Expected outcome vs actual outcome.
-
 ## Automated Testing
+
+Automated testing was not required for this project. However, the following frameworks could be used for future development:
+
 - [Jest JS](https://jestjs.io/) is a JavaScript Testing Framework with a focus on simplicity.
 - [UnitTest](https://docs.python.org/3/library/unittest.html) comes standard with Python and is a testing framework.
