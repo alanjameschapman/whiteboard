@@ -15,7 +15,8 @@ class CommentForm(forms.ModelForm):
     """
     class Meta:
         """
-        This class is used to create a form for the comment section of the blog.
+        This class is used to create a form for the
+        comment section of the blog.
         """
         model = Comment
         fields = ('content',)
@@ -39,4 +40,5 @@ class PostForm(forms.ModelForm):
         This class is used to create a form for the blog post.
         """
         model = Post
-        fields = ('title', 'subject', 'set', 'featured_image', 'content', 'status')
+        fields = (
+            'title', 'subject', 'set', 'featured_image', 'content', 'status')

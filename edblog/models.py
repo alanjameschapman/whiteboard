@@ -8,8 +8,6 @@ from cloudinary.models import CloudinaryField
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
-# Create your models here.
-
 
 class Post(models.Model):
     """
@@ -62,7 +60,8 @@ class Post(models.Model):
 
 class Comment(models.Model):
     """
-    Stores a single comment entry related to :model:`edblog.Post` and :model:`auth.User`.
+    Stores a single comment entry related to
+    :model:`edblog.Post` and :model:`auth.User`.
     """
 
     post = models.ForeignKey(
@@ -185,7 +184,8 @@ class Student(models.Model):
 
 class Enrolment(models.Model):
     """
-    Stores a single enrolment entry related to :model:`edblog.Student` and :model:`edblog.Subject`.
+    Stores a single enrolment entry related to
+    :model:`edblog.Student` and :model:`edblog.Subject`.
     """
 
     student = models.ForeignKey(Student, on_delete=models.CASCADE)

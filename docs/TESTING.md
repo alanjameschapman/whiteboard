@@ -113,19 +113,26 @@ CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/cs
 
 #### JavaScript
 
-I used [jshint](https://jshint.com/) to validate my custom JavaScript, used to edit, delete and approve comments.
+[jshint](https://jshint.com/) was used to validate the only custom JavaScript file, [comments.js](/staticfiles/js/comments.js), used to edit, delete and approve comments.
 
 | File | Screenshot | Description | Pass |
 | - | - | - | - |
-| [comments.js](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to comprehend. | &check; |
+| [comments](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to comprehend. | &check; |
 
 #### Python
 
-Python - http://pep8online.com/
+[CI Python Linter](http://pep8online.com/) was used to validate the custom python files. No errors were found.
 
-| File | Screenshot | Description | Pass |
-| - | - | - | - |
-| | | | &check; |
+| File | Screenshot | Pass |
+| - | - | - |
+| [admin](/edblog/admin.py) | ![admin](/docs/testing/admin.png) | &check; |
+| [forms](/edblog/forms.py) | ![forms](/docs/testing/forms.png) | &check; |
+| [models](/edblog/models.py) | ![models](/docs/testing/models.png) | &check; |
+| [urls](/edblog/urls.py) | ![urls-app](/docs/testing/urls-app.png) | &check; |
+| [views](/edblog/views.py) | ![views](/docs/testing/views.png) | &check; |
+| [urls-project](/whiteboard/urls-project.py) | ![urls-project](/docs/testing/urls-project.png) | &check; |
+| [settings](/whiteboard/settings.py) | ![settings](/docs/testing/settings.png) | &check; |
+
 
 ### Features
 

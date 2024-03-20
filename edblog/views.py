@@ -20,8 +20,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
     """
     Display a list of :model:`blog.Post` objects.
     """
-    # queryset = Post.objects.filter(status=1).order_by('-created_on')  # pylint: disable=no-member
-    # tailored to show latest and published posts first
+    # tailored to show relevant posts to the user
     model = Post
     template_name = "edblog/index.html"
     paginate_by = 9
@@ -30,17 +29,18 @@ class PostList(LoginRequiredMixin, generic.ListView):
         # Check if the user has a related Teacher instance
         if hasattr(self.request.user, 'teacher'):
             # Get the posts authored by the teacher
-            return Post.objects.filter(author=self.request.user).order_by('-created_on')
+            return Post.objects.filter( # pylint: disable=no-member
+                author=self.request.user).order_by('-created_on')
         elif hasattr(self.request.user, 'student'):
             # Get the enrolments for the student
-            enrolments = Enrolment.objects.filter(
+            enrolments = Enrolment.objects.filter( # pylint: disable=no-member
                 student=self.request.user.student)
             # Get the sets and subjects from the enrolments
             student_sets = [enrolment.set for enrolment in enrolments]
             student_subjects = [enrolment.subject for enrolment in enrolments]
             # Get the posts related to the sets and subjects from the enrolments
             return (
-                Post.objects.filter(
+                Post.objects.filter( # pylint: disable=no-member
                     set__in=student_sets,
                     subject__in=student_subjects,
                     status=1
@@ -50,7 +50,7 @@ class PostList(LoginRequiredMixin, generic.ListView):
         else:
             # If the user has neither a related Teacher nor Student instance,
             # return an empty queryset
-            return Post.objects.none()
+            return Post.objects.none() # pylint: disable=no-member
 
 
 # Django's generic view for updating a model instance
@@ -164,7 +164,7 @@ def comment_edit(request, slug, comment_id):
         if comment_form.is_valid() and comment.author == request.user:
             comment = comment_form.save(commit=False)
             comment.post = post
-            if hasattr(request.user, 'teacher'):  # check if user has teacher attribute
+            if hasattr(request.user, 'teacher'):  # check if user is teacher
                 comment.approved = True
             else:
                 comment.approved = False
@@ -194,7 +194,7 @@ def comment_delete(request, slug, comment_id):
     post = get_object_or_404(queryset, slug=slug)  # pylint: disable=unused-variable
     comment = get_object_or_404(Comment, pk=comment_id)
 
-    if comment.author == request.user:  # only allow the author to delete the comment
+    if comment.author == request.user:  # only allow  author to delete comment
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
@@ -219,18 +219,22 @@ def create_post(request):
         if form.is_valid():
             # Don't save the form to the database yet
             post = form.save(commit=False)
-            post.author = request.user  # Set the author field to the current user
+            post.author = request.user  # Set author field to current user
             post.slug = slugify(post.title)
             # Set the status based on the form input
             post.status = form.cleaned_data['status']
             try:
                 post.save()  # Try to save the form to the database
-            except IntegrityError as e:  # If the slug is not unique, add an error to the form
+            except IntegrityError as e:  # If slug not unique, add form error
                 if 'slug' in str(e):
                     form.add_error('title', 'A post with this title already '
-                                   'exists - please choose a different title. '
-                                   'Case, punctuation and spacing are ignored.')
-                    return render(request, 'edblog/create_post.html', {'form': form})
+                                   'exists - please choose a different title.'
+                                   ' Case, punctuation and spacing are '
+                                   'ignored.')
+                    return render(
+                        request,
+                        'edblog/create_post.html',
+                        {'form': form})
                 raise e
             return redirect('home')
     else:
