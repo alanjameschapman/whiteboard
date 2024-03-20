@@ -117,9 +117,16 @@ WAVE and Web Disability Simulator. Disable extensions if they interfere. incogni
 
 [W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files. The Django template language cannot be validated by URI using the W3C validator, so the HTML was copied and pasted into the direct input form for each page.
 
-| Page | W3C URL | screenshot | Pass |
-| - | - | - | - |
-| [index](/edblog/templates/edblog/index.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2F) | ![index](/docs/testing/index.png) | &check; |
+| Page | W3C URL | Screenshot | Notes | Pass |
+| - | - | :-: | - | - |
+| [register](/registration/signup.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Faccounts%2Fsignup%2F) | ![register](/docs/testing/register.png) | Errors relate to built-in Django form and don't affect UX or functionality. | &check; |
+| [login](/registration/login.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Faccounts%2Flogin%2F) | ![login](/docs/testing/login.png) | Errors relate to built-in Django form and don't affect UX or functionality. | &check; |
+ [index](/edblog/templates/edblog/index.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2F) | ![index](/docs/testing/index.png) | None | &check; |
+| [post_detail](/edblog/templates/edblog/post_detail.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Fpost_detail%2F1%2F) | ![post_detail](/docs/testing/post_detail.png) | None | &check; |
+| [create_post](/edblog/templates/edblog/create_post.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Fcreate_post%2F) | ![create_post](/docs/testing/create_post.png) | Errors relate to built-in summernote widget and don't affect UX or functionality.  | &check; |
+| [edit_post](/edblog/templates/edblog/edit_post.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Fedit_post%2F1%2F) | ![edit_post](/docs/testing/edit_post.png) | Errors relate to built-in summernote widget and don't affect UX or functionality. | &check; |
+| [post_confirm_delete](/edblog/templates/edblog/post_confirm_delete.html) | [W3C](https://validator.w3.org/nu/?doc=https%3A%2F%2Fwhiteboard-app-742f545f1848.herokuapp.com%2Fpost_confirm_delete%2F1%2F) | ![post_confirm_delete](/docs/testing/post_confirm_delete.png) | None | &check; |
+
 
 #### CSS
 

@@ -4,7 +4,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-8 mt-3 offset-md-2">
-      <h3>Delete Post</h1>
+      <h1>Delete Post</h1>
       <p>Are you sure you want to delete the post "{{ object.title }}"?</p>
       <form method="post">
         {% csrf_token %}
@@ -13,5 +13,6 @@
       </form>
     </div>
   </div>
+</div>
 
   {% endblock %}
