@@ -37,7 +37,6 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 | As a superuser I can... | ...so that I can... | Checked | Issue# |
 | - | - | :-: | :-: |
 | manage available post fields | standardise and structure posts | &check; | [1](https://github.com/alanjameschapman/whiteboard/issues/1) |
-| 
 
 ### User Input Validation
 
@@ -45,7 +44,7 @@ User inputs were validated for various incorrect inputs throughout the project. 
 
 
 | Page | Input | Test | Outcome | Screenshot | Pass |
-| - | - | - | - | - | - |
+| :-: | :-: | :-: | :-: | :-: | :-: |
 | [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | username | no username | prompt to fill in field | ![register-nousername](/docs/testing/register-nousername.png) | &check; |
 | [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | username | username already exists | prompt to choose another username | ![register-usernameexists](/docs/testing/register-usernameexists.png) | &check; |
 | [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | email | bad email | prompt to enter a valid email | ![register-bademail](/docs/testing/register-bademail.png) | &check; |
@@ -67,8 +66,8 @@ The responsiveness to different screen sizes was checked throughout the project.
 
 | Stage | iPhone 6/7/8 | iPad | Laptop
 | :-: | :-: | :-: | :-: |
-| MVP | ![MVPiPhone678](/docs/testing/response/mvp/iphone678.png) | ![MVPiPad](/docs/testing/response/mvp/ipadair.png) | ![MVPMacBookAir](/docs/testing/response/mvp/macbookair.png)
-| Final | 
+| MVP | ![mvpiphone678](/docs/testing/response/mvpiphone678.png) | ![mvpiad](/docs/testing/response/mvpipadair.png) | ![MVPMacBookAir](/docs/testing/response/mvpmacbookair.png)
+| Final | ![finaliphone678](/docs/testing/response/finaliphone678.png) | ![finalipad](/docs/testing/response/finalipadair.png) | ![finalMacBookAir](/docs/testing/response/finalmacbookair.png)
 
 ### Browser Compatibility
 
@@ -109,7 +108,19 @@ The only unresolved bug is the password reset not working. This does not affect 
 
 ### Lighthouse
 
-WAVE and Web Disability Simulator. Disable extensions if they interfere. incognito mode? Mobile AND desktop?!
+WAVE Web Accessibility Evaluation Tool was used throughout the project to check for accessibility issues. Lighthouse was then used to test the performance, accessibility, best practices and SEO of the deployed site. The PWA score not showing is a [known feature](https://stackoverflow.com/questions/60603960/why-lighthouse-pwa-score-is-blank-even-though-the-page-is-audited).
+
+Page | Mobile | Desktop | Comment |
+| :-: | :-: | :-: | :-: |
+| [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | ![register-mobile](/docs/testing/lighthouse/register-mobile.png) | ![register-desktop](/docs/testing/lighthouse/register-desktop.png) | None |
+| [login](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/login/) | ![login-mobile](/docs/testing/lighthouse/login-mobile.png) | ![login-desktop](/docs/testing/lighthouse/login-desktop.png) | None |
+| [index](https://whiteboard-app-742f545f1848.herokuapp.com/) | ![index-mobile](/docs/testing/lighthouse/index-mobile.png) | ![index-desktop](/docs/testing/lighthouse/index-desktop.png) | Performance checked on mobile device - deemed acceptable |
+| [post_detail](https://whiteboard-app-742f545f1848.herokuapp.com/post_detail/1/) | ![post_detail-mobile](/docs/testing/lighthouse/post_detail-mobile.png) | ![post_detail-desktop](/docs/testing/lighthouse/post_detail-desktop.png) | None |
+| [create_post](https://whiteboard-app-742f545f1848.herokuapp.com/create_post/) | ![create_post-mobile](/docs/testing/lighthouse/create_post-mobile.png) | ![create_post-desktop](/docs/testing/lighthouse/create_post-desktop.png) | Performance checked on mobile and desktop - deemed acceptable |
+| [edit_post](https://whiteboard-app-742f545f1848.herokuapp.com/edit_post/1/) | ![edit_post-mobile](/docs/testing/lighthouse/edit_post-mobile.png) | ![edit_post-desktop](/docs/testing/lighthouse/edit_post-desktop.png) | Performance checked on mobile and desktop - deemed acceptable |
+| [post_confirm_delete](https://whiteboard-app-742f545f1848.herokuapp.com/post_confirm_delete/1/) | ![post_confirm_delete-mobile](/docs/testing/lighthouse/post_confirm_delete-mobile.png) | ![post_confirm_delete-desktop](/docs/testing/lighthouse/post_confirm_delete-desktop.png) | None |
+| [logout](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/logout/) | ![logout-mobile](/docs/testing/lighthouse/logout-mobile.png) | ![logout-desktop](/docs/testing/lighthouse/logout-desktop.png) | None |
+
 
 ### Code Validation
 
