@@ -96,11 +96,15 @@ During development it was noted that it was easier to implementation dark blue a
 
 ### Fonts
 
-[iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) lists the "Most Used Google Fonts on School Websites". The top fonts were reviewed and Raleway was selected for its unique 'w' which would be used as the branding, navbar, footer and favicon to represent the 'w' in whiteboard.
+[iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) lists the "Most Used Google Fonts on School Websites". The top fonts were reviewed and Raleway was selected for its unique 'w' which would be used as the branding, navbar, footer and favicon to represent the 'w' in whiteboard:
 
 [fontjoy](https://fontjoy.com/) was used to find suitable pairing fonts. Martel Sans was chosen because it has serif and sans-serif variants for headings and paragraphs respectively. Sans-serif was chosen because serifs can be difficult to read on screens.
 
 ![fonts](/docs/screenshots/fonts.png)
+
+[favicon.io](https://favicon.io/favicon-generator/) was used to generate the favicon, based on the colour pallet.
+
+![favicon](/docs/screenshots/favicon.png)
 
 ### Navigation
 

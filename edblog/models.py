@@ -9,24 +9,31 @@ from cloudinary.models import CloudinaryField
 STATUS = ((0, "Draft"), (1, "Published"))
 
 # Create your models here.
+
+
 class Post(models.Model):
     """
     Stores a single blog post entry related to :model:`auth.User`.
     """
 
-    # used to set the status of the post 
+    # used to set the status of the post. Used in the PostForm
     STATUS = ((0, "Draft"), (1, "Published"))
-    
+
     title = models.CharField(
         max_length=200,
         unique=True,
         error_messages={
-            'unique': 'A post with this title already exists - please choose a different title. Case, punctuation and spacing are ignored.',
+            'unique': 'A post with this title already exists - '
+            'please choose a different title. '
+            'Case, punctuation and spacing are ignored.',
         },)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name='edblog_posts')
-    subject = models.ForeignKey('Subject', on_delete=models.CASCADE, blank=True, null=True)
-    set = models.ForeignKey('Set', on_delete=models.CASCADE, blank=True, null=True)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name='edblog_posts')
+    subject = models.ForeignKey(
+        'Subject', on_delete=models.CASCADE, blank=True, null=True)
+    set = models.ForeignKey(
+        'Set', on_delete=models.CASCADE, blank=True, null=True)
     featured_image = CloudinaryField('image', default='placeholder')
     content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
@@ -38,8 +45,8 @@ class Post(models.Model):
         """
         Ensures that the slug is set using the title.
         """
-        if not self.slug: # checks if the slug is set
-            self.slug = slugify(self.title) # sets the slug using the title
+        if not self.slug:  # checks if the slug is set
+            self.slug = slugify(self.title)  # sets the slug using the title
         super(Post, self).save(*args, **kwargs)
 
     class Meta:
@@ -58,7 +65,8 @@ class Comment(models.Model):
     Stores a single comment entry related to :model:`edblog.Post` and :model:`auth.User`.
     """
 
-    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    post = models.ForeignKey(
+        Post, on_delete=models.CASCADE, related_name='comments')
     author = models.ForeignKey(User, on_delete=models.CASCADE)
     content = models.TextField()
     approved = models.BooleanField(default=False)
@@ -128,7 +136,7 @@ class Teacher(models.Model):
 
     # pylint: disable=E0307
     def __str__(self):
-        return self.user.username # pylint: disable=no-member
+        return self.user.username  # pylint: disable=no-member
 
 
 class Set(models.Model):
@@ -172,7 +180,7 @@ class Student(models.Model):
 
     # pylint: disable=E0307
     def __str__(self):
-        return self.user.username # pylint: disable=no-member
+        return self.user.username  # pylint: disable=no-member
 
 
 class Enrolment(models.Model):
@@ -192,6 +200,11 @@ class Enrolment(models.Model):
         """
         ordering = ['student', 'subject']
 
-    # pylint: disable=E0307
     def __str__(self):
-        return self.student.user.username + " studying " + self.subject.name + " in " + self.set.name + " taught by " + self.set.teacher.user.username # pylint: disable=no-member
+        return (
+            self.student.user.username + " studying " + # pylint: disable=no-member
+            self.subject.name + " in " +
+            self.set.name + " taught by " +
+            self.set.teacher.user.username  # pylint: disable=no-member
+
+        )

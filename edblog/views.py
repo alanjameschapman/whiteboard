@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import IntegrityError
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.template.defaultfilters import slugify
 from django.views import generic
@@ -14,9 +14,7 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from .models import Post, Comment, Enrolment
 from .forms import CommentForm, PostForm
-from django.http import HttpResponse, JsonResponse
 
-# Create your views here.
 
 class PostList(LoginRequiredMixin, generic.ListView):
     """
@@ -35,14 +33,23 @@ class PostList(LoginRequiredMixin, generic.ListView):
             return Post.objects.filter(author=self.request.user).order_by('-created_on')
         elif hasattr(self.request.user, 'student'):
             # Get the enrolments for the student
-            enrolments = Enrolment.objects.filter(student=self.request.user.student)
+            enrolments = Enrolment.objects.filter(
+                student=self.request.user.student)
             # Get the sets and subjects from the enrolments
             student_sets = [enrolment.set for enrolment in enrolments]
             student_subjects = [enrolment.subject for enrolment in enrolments]
             # Get the posts related to the sets and subjects from the enrolments
-            return Post.objects.filter(set__in=student_sets, subject__in=student_subjects, status=1).order_by('-created_on')
+            return (
+                Post.objects.filter(
+                    set__in=student_sets,
+                    subject__in=student_subjects,
+                    status=1
+                )
+                .order_by('-created_on')
+            )
         else:
-            # If the user has neither a related Teacher nor Student instance, return an empty queryset
+            # If the user has neither a related Teacher nor Student instance,
+            # return an empty queryset
             return Post.objects.none()
 
 
@@ -60,13 +67,16 @@ class PostUpdateView(LoginRequiredMixin, UpdateView):
 
 
 class PostDeleteView(LoginRequiredMixin, DeleteView):
+    """
+    Delete a :model:`edblog.Post`.
+    """
     model = Post
     success_url = reverse_lazy('home')  # replace with your post list URL
 
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(author=self.request.user)
-    
+
 
 @login_required
 def post_detail(request, slug):
@@ -91,10 +101,10 @@ def post_detail(request, slug):
 
     # If the user is a teacher, they can see all posts
     if hasattr(request.user, 'teacher'):
-        queryset = Post.objects.all() # pylint: disable=no-member
+        queryset = Post.objects.all()  # pylint: disable=no-member
     # Otherwise, only show published posts
     else:
-        queryset = Post.objects.filter(status=1) # pylint: disable=no-member
+        queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
 
     # queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
     post = get_object_or_404(queryset, slug=slug)
@@ -127,6 +137,7 @@ def post_detail(request, slug):
             "comment_form": comment_form,
         },
     )
+
 
 @login_required
 def comment_edit(request, slug, comment_id):
@@ -172,12 +183,12 @@ def comment_delete(request, slug, comment_id):
     Delete an individual :model:`edblog.Comment`.
 
     **Context**
-    
+
     ``post``
         An instance of :model:`edblog.Post`.
     ``comment``
         An instance of :model:`edblog.Comment`.
-        
+
     """
     queryset = Post.objects.filter(status=1)  # pylint: disable=no-member
     post = get_object_or_404(queryset, slug=slug)  # pylint: disable=unused-variable
@@ -192,6 +203,7 @@ def comment_delete(request, slug, comment_id):
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
+
 @login_required
 def create_post(request):
     """
@@ -205,15 +217,19 @@ def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST, request.FILES)
         if form.is_valid():
-            post = form.save(commit=False)  # Don't save the form to the database yet
+            # Don't save the form to the database yet
+            post = form.save(commit=False)
             post.author = request.user  # Set the author field to the current user
             post.slug = slugify(post.title)
-            post.status = form.cleaned_data['status']  # Set the status based on the form input
+            # Set the status based on the form input
+            post.status = form.cleaned_data['status']
             try:
                 post.save()  # Try to save the form to the database
-            except IntegrityError as e: # If the slug is not unique, add an error to the form
+            except IntegrityError as e:  # If the slug is not unique, add an error to the form
                 if 'slug' in str(e):
-                    form.add_error('title', 'A post with this title already exists - please choose a different title. Case, punctuation and spacing are ignored.')
+                    form.add_error('title', 'A post with this title already '
+                                   'exists - please choose a different title. '
+                                   'Case, punctuation and spacing are ignored.')
                     return render(request, 'edblog/create_post.html', {'form': form})
                 raise e
             return redirect('home')
@@ -223,7 +239,11 @@ def create_post(request):
 
 
 def custom_404(request, exception):
+    """
+    Custom 404 error page.
+    """
     return render(request, '404.html', status=404)
+
 
 @csrf_exempt
 def comment_approve(request, comment_id):

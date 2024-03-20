@@ -1,8 +1,12 @@
+/* jshint esversion: 6 */
+
+// Get all buttons for editing comments.
 const editButtons = document.getElementsByClassName("btn-edit");
 const commentText = document.getElementById("id_content");
 const commentForm = document.getElementById("commentForm");
 const submitButton = document.getElementById("submitButton");
 
+// Get the delete modal and delete buttons.
 const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
 const deleteButtons = document.getElementsByClassName("comment-delete");
 const deleteConfirm = document.getElementById("deleteConfirm");
@@ -68,8 +72,6 @@ function getCookie(name) {
   }
   return cookieValue;
 }
-const csrftoken = getCookie("csrftoken");
-console.log("CSRF Token: ", csrftoken);
 
 // Get all "Approve" buttons.
 const approveCommentButtons = document.getElementsByClassName("btn-approve");
@@ -78,13 +80,11 @@ const approveCommentButtons = document.getElementsByClassName("btn-approve");
 for (let button of approveCommentButtons) {
   // Add a click event listener.
   button.addEventListener("click", (e) => {
-    console.log("Button clicked");
     // Prevent the default action.
     e.preventDefault();
 
     // Get the ID of the comment to be approved.
     let commentId = e.target.getAttribute("data-comment_id");
-    console.log("Comment ID: ", commentId);
 
     // Send a request to the server to approve the comment.
     fetch(`/comment_approve/${commentId}/`, {
@@ -106,11 +106,13 @@ for (let button of approveCommentButtons) {
           if (statusElement) {
             statusElement.remove();
           }
+          // Show the comment if it was previously hidden.
           const commentDiv = document.querySelector(`#comment-div-${commentId}`);
           if (commentDiv) {
             commentDiv.classList.remove('d-none');
             commentDiv.classList.remove('faded');
           }
+          // Update the comment count.
           const countElement = document.getElementById('comment-count');
           if (countElement) {
             const count = parseInt(countElement.innerText, 10);

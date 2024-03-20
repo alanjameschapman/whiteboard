@@ -61,6 +61,9 @@ Browser compatibility was tested throughout the project as shown below. Using th
 | Final | 
 
 ### Bugs
+
+Bugs were tracked throughout the project as GitHub issues. Links are provided to see the development notes and screenshots for each.
+
 #### Resolved
 
 | Issue | Problem | Screenshot | Solution | Screenshot |
@@ -75,6 +78,8 @@ Browser compatibility was tested throughout the project as shown below. Using th
 
 
 #### Unresolved
+
+The only unresolved bug is the password reset not working. This does not affect the website functionality because the admin can reset passwords manually.
 
 | Issue# | Problem | Screenshot | Comment |
 | --- | --- | --- | --- |
@@ -96,15 +101,23 @@ HTML - https://validator.w3.org/
 
 #### CSS
 
-CSS - https://jigsaw.w3.org/css-validator/
+CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/css-validator/) by direct input at and validates as CSS level 3 + SVG:
+
+<p>
+    <a href="http://jigsaw.w3.org/css-validator/check/referer">
+        <img style="border:0;width:88px;height:31px"
+            src="https://jigsaw.w3.org/css-validator/images/vcss-blue"
+            alt="Valid CSS!"/>
+    </a>
+</p>
 
 #### JavaScript
 
-JavaScript - https://jshint.com/
+I used [jshint](https://jshint.com/) to validate my custom JavaScript, used to edit, delete and approve comments.
 
 | File | Screenshot | Description | Pass |
 | - | - | - | - |
-| | | | &check; |
+| [comments.js](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to comprehend. | &check; |
 
 #### Python
 

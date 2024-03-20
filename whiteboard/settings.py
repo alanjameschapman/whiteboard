@@ -15,7 +15,7 @@ import os
 from django.contrib.messages import constants as messages
 import dj_database_url
 if os.path.isfile('env.py'):
-    import env # pylint: disable=unused-import
+    import env  # pylint: disable=unused-import
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -187,7 +187,8 @@ SUMMERNOTE_CONFIG = {
         'height': '300px',
         'toolbar': [
             ['style', ['style']],
-            ['font', ['bold', 'italic', 'underline', 'clear', 'strikethrough', 'superscript', 'subscript']],
+            ['font', ['bold', 'italic', 'underline', 'clear',
+                      'strikethrough', 'superscript', 'subscript']],
             ['para', ['ul', 'ol', 'paragraph', 'height']],
             ['insert', ['table', 'link', 'picture', 'video', 'hr']],
             ['view', ['fullscreen', 'codeview']],

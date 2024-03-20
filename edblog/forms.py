@@ -3,7 +3,7 @@ This file is used to create a form for the comment section of the blog.
 """
 from django_summernote.widgets import SummernoteWidget
 from django import forms
-from .models import Comment, Post, STATUS
+from .models import Comment, Post
 
 
 class CommentForm(forms.ModelForm):

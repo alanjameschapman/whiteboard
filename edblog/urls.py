@@ -1,3 +1,4 @@
+'''This file provides the URL patterns for the edblog app.'''
 from django.urls import path
 from . import views
 from .views import PostUpdateView, PostDeleteView
