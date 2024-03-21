@@ -30,7 +30,7 @@ Needs of each user were defined as user stories and managed via GitHub Issues/Pr
 
 Following an initial brainstorm of desired and possible functionality, user stories were tabulated. These were grouped into Epics and Themes for Agile purposes, categorized using MoSCoW, and allocated Story Points (representing amount of work required to implement). By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
-<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/mvp.png" alt="mvp" width="700"/>
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/mvp.png" alt="mvp" width="800"/>
 
 A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features, which were not included in the scope of this project:
 - Archive section of older posts
