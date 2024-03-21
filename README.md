@@ -14,7 +14,7 @@ The project was developed and [documented](docs/AGILE.md) using Agile principles
 
 # User Experience
 
-The five planes of User Experience were used to design the website. This is not a linear process (moving from Strategy to Surface chronologically) - each plane was considered and developed throughout development.
+The five planes of User Experience were used to design the website. This is not a linear process - each plane was considered and developed throughout development.
 
 <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/uxplanes.png" alt="ux5planes" width="500"/>
 
