@@ -30,7 +30,7 @@ Needs of each user were defined as user stories and managed via GitHub Issues/Pr
 
 Following an initial brainstorm of desired and possible functionality, user stories were tabulated. These were grouped into Epics and Themes for Agile purposes, categorized using MoSCoW, and allocated Story Points (representing amount of work required to implement). By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
-![mvp](/docs/screenshots/mvp.png)
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/mvp.png" alt="mvp" width="600"/>
 
 A review of [edublogs](https://edublogs.org/) which appears to be the dominant platform in educational blogs revealed a few additional features, which were not included in the scope of this project:
 - Archive section of older posts
@@ -96,7 +96,7 @@ Whilst developing these wireframes, it was concluded that site navigation would 
 
 The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image:
 
-<img src="https://github.com/alanjameschapman/whiteboard/raw/main/static/images/default.jpg" alt="contrast" width="500"/>
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/static/images/default.jpg" alt="default image" width="500"/>
 
 The dominant colour is yellow, which promotes [positivity, attention and creativity](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/) in the classroom.
 
