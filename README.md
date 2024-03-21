@@ -1,33 +1,34 @@
 # Introduction 
 
-Learning platform for teachers to post topic notes, tutorials and tests. Students can comment (ask questions) and teacher moderates.
-Topics can be tagged with skills. Results can be filtered by tags.
-GitHub's burger bun (top left) can be used to navigate to the desired section.
+In the author's experience (as a former Science teacher) classrooms can be hectic environments! There is a lot of content to teach, and limited time to cover it. Whilst teachers do their best to address misconceptions and questions of every student in the class, it is inevitable that some students may still leave the room with unanswered questions.
+
+'Whiteboard' is a learning platform for teachers to post lesson notes to help their students understanding for a given topic. Students can comment (ask questions) on any given post and teachers can respond.
+
+Please use GitHub's burger bun to navigate between sections.
 
 # Agile Development
 
-This project was developed and [documented](docs/AGILE.md) using Agile principles.
+The project was developed and [documented](docs/AGILE.md) using Agile principles throughout.
 
-# 5 planes of User Experience
-The project was planned using the five planes of User Experience, as summarised below:
+# User Experience
 
-![ux5planes](/docs/screenshots/ux5planes.png)
+The five planes of User Experience were used to design the website. This is not a linear process (moving from Strategy to Surface chronologically) - each plane was considered and developed throughout development.
+
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/uxplanes.png" alt="ux5planes" width="500"/>
 
 ## Strategy
 
-In the author's experience (as a former Science teacher) classrooms can be hectic environments! There is a lot of content to teach, and limited time to cover it. Whilst teachers do their best to address misconceptions and questions of every student in the class, it is inevitable that some students may still leave the room with unanswered questions.
-
 The goals this platform seeks to achieve are two-fold:
-- For the TEACHER to provide topic content, address student questions, and hopefully set quizzes to test student knowledge and understanding.
+- For the TEACHER to provide topic content, address student questions, and eventually to set quizzes to test student knowledge and understanding.
 - For the STUDENT to access relevant content (according to their teacher and class), and improve their understanding by asking questions (via comments) and completing quizzes.
 
-User are divided into three main groups: Superuser, Teacher and Student. In the context of a school, the Superuser would likely be the headteacher, admin or IT department. For safeguarding reasons, they would be responsible for creating teachers logins, subjects and sets. They are also responsible for resetting passwords if required.
+User are divided into three main groups: Superuser, Teacher and Student. In the context of a school, the Superuser would likely be the headteacher, admin or IT department. For safeguarding reasons, they would be responsible for creating teachers and student profile, subjects, sets and enrolments. They are also responsible for resetting passwords if required.
 
-Their needs were defined as user stories and managed via GitHub Issues/Projects.
+Needs of each user were defined as user stories and managed via GitHub Issues/Projects.
 
 ## Scope
 
-Following an initial brainstorm of desired and possible functionality, a set of user stories was tabulated. These were grouped into Epics and Themes for Agile purposes, categorized using MoSCoW, and allocated Story Points. By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
+Following an initial brainstorm of desired and possible functionality, user stories were tabulated. These were grouped into Epics and Themes for Agile purposes, categorized using MoSCoW, and allocated Story Points (representing amount of work required to implement). By assigning values 1, 2 and 3 to M, S and C respectively, and multiplying by the number of Story Points, functionality could be prioritized and the Minimum Viable Product (MVP) could be identified:
 
 ![mvp](/docs/screenshots/mvp.png)
 
@@ -37,13 +38,15 @@ A review of [edublogs](https://edublogs.org/) which appears to be the dominant p
 
 ## Structure
 
-[Lucidchart](https://www.lucidchart.com) was used to structure the site navigation as shown in the user flow diagram below. This was later developed into wireframes.
+[Lucidchart](https://www.lucidchart.com) was used to structure the site navigation as shown in the user flow diagram below. This was later developed into wireframes - see the Skeleton section.
 
 ![user-flow](/docs/wireframes/user-flow.svg)
 
 The Entity Relationship Diagram (ERD) below shows how the database models will relate to each other.
 
 ![erd](/docs/erd/whiteboard_erd.png)
+
+Various relationships can be seen in the ERD, such as (but not limited to):
 
 **One-to-many relationships:**
 
@@ -63,13 +66,29 @@ Note that a grade_level attribute was included in the Student entity in the even
 
 ## Skeleton
 
-[Balsamiq](https://balsamiq.com/) was used to create wireframes for the website.
+### Interface Design
 
-![wireframes](/docs/wireframes/wireframes-user-journey.png)
+The user flow diagram helped to develop wireframes for each page using [Balsamiq](https://balsamiq.com/). A mobile-first approach was used, with subsequent layouts for larger screens developed thereafter.
 
-A mobile-first approach was used, with subsequent wireframes for larger screens developed thereafter.
+#### Mobile wireframes
 
-Testing of interface and navigation has been [documented](docs/TESTING.md).
+The mobile layout was designed to be simple and easy to navigate. The home page would display the last 9 posts in a 1x9 grid, allowing the user to scroll vertically through the posts. The post detail page would display the full content of the post, and the post create and update pages would be similar in layout.
+
+![wireframes](/docs/wireframes/wireframes-mobile.png)
+
+#### Tablet wireframes
+
+The main difference for the tablet layout was for the home page, where the posts were displayed in a 3x3 grid.
+
+![wireframes](/docs/wireframes/wireframes-tablet.png)
+
+#### Desktop wireframes
+
+After assessing the wireframes, it was decided that the desktop would follow the same layouts for all pages as the tablet, but with more space between elements. Therefore, it was not necessary to create separate wireframes for the desktop.
+
+### Navigation Design
+
+Whilst developing these wireframes, it was concluded that site navigation would be best served by a navbar on each page, and that the home page would display the last 9 posts. The post detail page would display the full content of the post, and the post create and update pages would be similar in layout.
 
 ## Surface
 
@@ -77,7 +96,7 @@ Testing of interface and navigation has been [documented](docs/TESTING.md).
 
 The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image:
 
-![default image](/static/images/default.jpg)
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/static/images/default.jpg" alt="contrast" width="500"/>
 
 The dominant colour is yellow, which promotes [positivity, attention and creativity](https://blog.hope-education.co.uk/classroom-psychology-which-colours-are-best-for-education/) in the classroom.
 
@@ -85,7 +104,7 @@ The [Coolors image picker](https://coolors.co/image-picker) was used to generate
 
 The colour combination was regenerated until the three colours generated a positive response in the author and provided suitable contrast, which was checked using [eightshapes](https://eightshapes.com/).
 
-![contrast](/docs/screenshots/contrast.png)
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/contrast.png" alt="contrast" width="600"/>
 
 It was noted that the colours should be used as follows:
 - Yellow: text on dark blue or background to dark blue.
@@ -100,7 +119,7 @@ During development it was noted that it was easier to implementation dark blue a
 
 [fontjoy](https://fontjoy.com/) was used to find suitable pairing fonts. Martel Sans was chosen because it has serif and sans-serif variants for headings and paragraphs respectively. Sans-serif was chosen because serifs can be difficult to read on screens.
 
-![fonts](/docs/screenshots/fonts.png)
+<img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/fonts.png" alt="fonts" width="400"/>
 
 [favicon.io](https://favicon.io/favicon-generator/) was used to generate the favicon, based on the colour pallet.
 
@@ -125,7 +144,7 @@ To minimise user clicks, a 'burger bun' is not used because there is enough spac
 
 | Teacher | Student |
 | :-: | :-: |
-| ![navbar-teacher](/docs/features/navbar-teacher.png) | ![navbar-student](/docs/features/navbar-student.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/navbar-teacher.png" alt="navbar-teacher" width="400"/> | <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/navbar-student.png" alt="navbar-student" width="400"/> |
 
 | Element | Description | Visibility |
 | - | - | - |
@@ -141,7 +160,7 @@ The footer is applied to all screens and is responsive to different screen sizes
 
 | Both Users |
 | :-: |
-| ![footer](/docs/features/footer.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/footer.png" alt="footer" width="400"/> |
 
 | Element | Description | Visibility |
 | - | - | - |
@@ -154,7 +173,7 @@ The register screen allows the user to register for the site. The user can enter
 
 | Both Users |
 | :-: |
-| ![register](/docs/features/register.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/register.png" alt="register" width="400"/> |
 
 | Element | Description | Visibility |
 | - | - | - |
@@ -171,7 +190,7 @@ The login screen allows the user to log in to the site. The user can enter their
 
 | Both Users |
 | :-: |
-| ![login](/docs/features/login.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/login.png" alt="login" width="400"/> |
 
 | Element | Description | Visibility |
 | - | - | - |
@@ -205,7 +224,7 @@ For a student, it displays only the published posts for the classes that the stu
 
 ### Post Detail (post_detail.html)
 
-The post detail screen displays the full content of the post. The user can comment on the post, and view approved comments made by other users. The teacher can edit or delete the post. The teacher can also approve comments made by students. Unapproved comments appear faded and student are marked as 'awaiting approval'.
+The post detail screen displays the full content of the post. The user can comment on the post, and view approved comments made by other users. The teacher can edit or delete the post. Unapproved comments appear faded and are marked as 'awaiting approval'. The teacher approve comments made by students here, as well as via the admin panel. 
 
 | Teacher | Student |
 | :-: | :-: |
@@ -270,7 +289,7 @@ The post confirm delete screen allows the teacher to confirm they want to delete
 
 | Teacher |
 | :-: |
-| ![post-confirm-delete](/docs/features/post-confirm-delete.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/post-confirm-delete.png" alt="post-confirm-delete" width="400"/> |
 
 | Element | Description | Visibility |
 | :- | :- | :- |
@@ -284,7 +303,7 @@ The logout screen allows the user to log out of the site. The user can click the
 
 | Both Users |
 | :-: |
-| ![logout](/docs/features/logout.png) |
+| <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/features/logout.png" alt="logout" width="400"/> |
 
 | Element | Description | Visibility |
 | :- | :- | :- |
@@ -292,11 +311,18 @@ The logout screen allows the user to log out of the site. The user can click the
 
 ### Admin panel
 
-The admin panel is accessible by superusers and teachers. The intention is that:
-- the superuser (school admin/IT) will be responsible for creating teachers and students from the users registered on the site. Alternatively, the superuser could create the users directly and notify students of their login details, but this would require a secure method of communication.
-- the teacher will be responsible for creating the sets and subjects that they teach, and enrolling students in their sets.
+The admin panel is accessible by superusers and teachers only. It provides a way to manage users, posts, comments, sets and subjects. The admin panel is accessible via the Django admin interface.
 
-The admin panel has been customised by registering models via the admin.py and specifying displays, fields and filters among others. Furthermore, a teacher group has been created and assigned permissions to manage posts, comments, sets, subjects, students and enrolments.
+The **superuser** (school admin/IT) will be responsible for:
+- creating teachers and students. This can either be done from the users registered on the site OR by creating the student profiles directly and notifying students of their login details. The latter would require a secure method of communication.
+- creating subjects and sets.
+- enrolling students in sets.
+
+The **teacher** will be responsible for:
+- creating posts for their subjects and sets.
+- managing (approving and deleting) comments made by students.
+
+The admin panel has been customised by registering models via the admin.py and specifying displays, fields and filters among others. Furthermore, a teacher group has been created and assigned permissions to manage posts, comments. These can be sorted and filtered to provide a quick way of approving comments made by students.
 
 | Superuser | Teacher |
 | :-: | :-: |
@@ -361,3 +387,9 @@ It was not necessary to complete both automated and manual testing, so the latte
 - [iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) as inspiration for commonly-used fonts in educational websites.
 - [fontjoy](https://fontjoy.com/) for pairing fonts.
 - [favicon.io](https://favicon.io/favicon-generator/) was used to generate the favicon.
+
+# Acknowledgements
+
+- My mentor, [David Bowers](https://github.com/dnlbowers), for his guidance and support.
+- Code Institute Slack community for their support.
+- My wife and kids for their patience and understanding.

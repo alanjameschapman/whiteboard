@@ -108,7 +108,7 @@ The only unresolved bug is the password reset not working. This does not affect 
 
 ### Lighthouse
 
-WAVE Web Accessibility Evaluation Tool was used throughout the project to check for accessibility issues. Lighthouse was then used to test the performance, accessibility, best practices and SEO of the deployed site. The PWA score not showing is a [known feature](https://stackoverflow.com/questions/60603960/why-lighthouse-pwa-score-is-blank-even-though-the-page-is-audited).
+The WAVE Web Accessibility Evaluation Tool was used throughout the project to check for accessibility issues. Lighthouse was then used to test the performance, accessibility, best practices and SEO of the deployed site. The PWA score not showing is a [known feature](https://stackoverflow.com/questions/60603960/why-lighthouse-pwa-score-is-blank-even-though-the-page-is-audited).
 
 Page | Mobile | Desktop | Comment |
 | :-: | :-: | :-: | :-: |
@@ -125,7 +125,7 @@ Page | Mobile | Desktop | Comment |
 
 #### HTML
 
-[W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML files. The Django template language cannot be validated by URI using the W3C validator, so the HTML was copied and pasted into the direct input form for each page.
+[W3C Markup Validation Service](https://validator.w3.org/) was used to validate the HTML. The Django template language cannot be validated by URI using the W3C validator, so the rendered HTML was copied and pasted into the direct input form for each page.
 
 | Page | W3C URL | Screenshot | Notes | Pass |
 | :-: | :-: | :-: | :-: | :-: |
@@ -140,7 +140,7 @@ Page | Mobile | Desktop | Comment |
 
 #### CSS
 
-CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/css-validator/) by direct input at and validates as CSS level 3 + SVG:
+CSS was validated by direct input using [jigsaw W3C Validation Service](https://jigsaw.w3.org/css-validator/) and validates as CSS level 3 + SVG:
 
 <p>
     <a href="http://jigsaw.w3.org/css-validator/check/referer">
@@ -156,7 +156,7 @@ CSS was validated using [jigsaw W3C Validation Service](https://jigsaw.w3.org/cs
 
 | File | Screenshot | Description | Pass |
 | :-: | :-: | :-: | :-: |
-| [comments](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to comprehend. | &check; |
+| [comments](/staticfiles/js/comments.js) | ![comments.js](/docs/testing/comments-js.png) | One warning about a function 'getCookie' declared in a loop referencing an outer scoped variable. Reviewed but syntax deemed not difficult to understand. | &check; |
 
 #### Python
 
