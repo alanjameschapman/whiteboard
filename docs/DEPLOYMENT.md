@@ -2,7 +2,7 @@
 
 ## Deployment
 
-The live deployed application can be found at [link](https://link). [Heroku](https://www.heroku.com) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
+The live deployed application can be found [here](https://whiteboard-app-742f545f1848.herokuapp.com/). [Heroku](https://www.heroku.com) is a platform as a service (PaaS) that enables developers to build, run, and operate applications entirely in the cloud.
 
 Deployment steps are as follows, after account setup:
 
@@ -13,7 +13,7 @@ Deployment steps are as follows, after account setup:
 | Key                     | Value                                                                |
 | ----------------------- | -------------------------------------------------------------------- |
 | `CLOUDINARY_URL`        | insert your own Cloudinary API key here                              |
-| `DATABASE_URL`          | insert your own ElephantSQL database URL here                        |
+| `DATABASE_URL`          | insert your own database URL here                        |
 | `DISABLE_COLLECTSTATIC` | 1 (_this is temporary, and can be removed for the final deployment_) |
 | `SECRET_KEY`            | this can be any random secret key                                    |
 
@@ -33,7 +33,7 @@ If you have your own packages that have been installed, then the requirements fi
 The **Procfile** can be created with the following command:
 
 - `web: gunicorn app_name.wsgi > Procfile`
-- _replace **app_name** with the name of your primary Django app name; the folder where settings.py is located_. In this case, that is `stackportfolio`.
+- _replace **app_name** with the name of your primary Django app name; the folder where settings.py is located_. In this case, that is `whiteboard`.
 
 For Heroku deployment, follow these steps to connect your own GitHub repository to the newly created app:
 
