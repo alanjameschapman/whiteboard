@@ -4,6 +4,8 @@ In the author's experience (as a former Science teacher) classrooms can be hecti
 
 'Whiteboard' is a learning platform for teachers to post lesson notes to help their students understanding for a given topic. Students can comment (ask questions) on any given post and teachers can respond.
 
+The website can only be accessed by registered users.
+
 Please use GitHub's burger bun to navigate between sections.
 
 # Agile Development
@@ -133,14 +135,11 @@ Infinite scroll of blog posts was discounted because it tends to be used for aim
 
 ## Implemented
 
-The website can only be accessed by registered users. The following features are available across the site:
+### Navbar and Footer (all pages)
 
-### All Pages
+The navbar and footer are present on all pages and are responsive to different screen sizes.
 
-#### Navbar
-
-The navbar is present on all screens and is responsive to different screen sizes. It is not fixed to the top of the page because it is not necessary to be visible at all times.
-To minimise user clicks, a 'burger bun' is not used because there is enough space to display the logo and links, even for mobile devices.
+The navbar is not fixed to the top of the page because it is not necessary to be visible at all times. To minimise user clicks, a 'burger bun' is not used because there is enough space to display the logo and links, even for mobile devices.
 
 | Teacher | Student |
 | :-: | :-: |
@@ -154,9 +153,7 @@ To minimise user clicks, a 'burger bun' is not used because there is enough spac
 | Django Message | Dismissable message confirming user action | Both |
 | User status | Permanent message advising which user is logged in | Both |
 
-#### Footer
-
-The footer is applied to all screens and is responsive to different screen sizes. It is not fixed to the bottom of the page because it is not necessary to be visible at all times.
+The footer is not fixed to the bottom of the page because it is not necessary to be visible at all times.
 
 | Both Users |
 | :-: |

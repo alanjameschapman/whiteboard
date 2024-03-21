@@ -241,13 +241,6 @@ def create_post(request):
     return render(request, 'edblog/create_post.html', {'form': form})
 
 
-def custom_404(request, exception):
-    """
-    Custom 404 error page.
-    """
-    return render(request, '404.html', status=404)
-
-
 @csrf_exempt
 def comment_approve(request, comment_id):
     """

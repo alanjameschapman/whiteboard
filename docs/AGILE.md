@@ -88,8 +88,14 @@ Any open issues were moved to the backlog and downgraded to could-haves. The onl
 - Custom error pages could be resolved by adding 'handlers' to project urls.py
 - Console errors on page load due to Cloudinary and can be fixed by a couple of lines in base.html 'head' section
 - User groups could be implemented in admin panel so teachers can log in and have limited functionality such as creating sets and moderating comments
-- Focus on post draft functionality, by either remove draft button from edit_post template or ensuring drafts appear frontend.
+- Focus on post draft functionality, by either removing draft button from edit_post template or ensuring drafts appear frontend.
 
 ## Sprint 4 - ends with Submit Full Stack Toolkit Portfolio Project
 
 Sprint 4 focused on completing the readme and testing documentation.
+
+All actions from the previous mentor meeting were completed, except for custom error pages which were not deemed necessary because Django's default error pages are sufficient. This user story was moved to the backlog and left as a could-have.
+
+| Project Sprints Summary | Future Implementation |
+| :-: | :-: |
+| ![project-complete](/docs/sprints/project-complete.png) | ![future-implementation](/docs/sprints/future-implementation.png) |
