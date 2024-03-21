@@ -71,8 +71,6 @@ At the end of sprint 2 it was calculated that with 30 hours of work, 15 user sto
 
 ## Sprint 3 - ends with Mentor Session 3 (Final Project Review)
 
-It was deemed necessary that peers should be able to reset their password so this was the first priority alongside styling before posting for review:
-
 ### Sprint 3 plan
 
 ![sprint3_plan](/docs/sprints/sprint3_plan.png)
