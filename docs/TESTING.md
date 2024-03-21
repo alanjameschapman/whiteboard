@@ -3,9 +3,9 @@
 
 ### User Stories
 
-User Stories were assessed and checked, categorised as superuser (headteacher/admin/IT dept), teacher and student, which are both a subset of a user.
+User Stories were assessed and categorised as either superuser (headteacher/admin/IT dept), teacher or user - the latter represents both teachers and students.
 
-These were tracked throughout the project as GitHub issues. Links are provided to see the development notes and screenshots for each.
+These were tracked throughout the project as [GitHub issues](https://github.com/users/alanjameschapman/projects/5). Links are provided to see the development notes and screenshots for each.
 
 #### Users (Teachers and Students)
 
@@ -42,7 +42,6 @@ These were tracked throughout the project as GitHub issues. Links are provided t
 
 User inputs were validated for various incorrect inputs throughout the project. Results for the final site are shown below.
 
-
 | Page | Input | Test | Outcome | Screenshot | Pass |
 | :-: | :-: | :-: | :-: | :-: | :-: |
 | [register](https://whiteboard-app-742f545f1848.herokuapp.com/accounts/signup/) | username | no username | prompt to fill in field | ![register-nousername](/docs/testing/register-nousername.png) | &check; |
@@ -62,7 +61,7 @@ NB. the create_post form is the same as the edit_post form, so the same validati
 
 ### Responsiveness
 
-The responsiveness to different screen sizes was checked throughout the project. Results for MVP and final site are shown below.
+The responsiveness to different screen sizes was checked throughout the project. Results for MVP and final site are shown below, the main visual difference being fonts.
 
 | Stage | iPhone 6/7/8 | iPad | Laptop
 | :-: | :-: | :-: | :-: |
