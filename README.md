@@ -24,9 +24,9 @@ The goals this platform seeks to achieve are two-fold:
 - For the TEACHER to provide topic content, address student questions, and eventually to set quizzes to test student knowledge and understanding.
 - For the STUDENT to access relevant content (according to their teacher and class), and improve their understanding by asking questions (via comments) and completing quizzes.
 
-User are divided into three main groups: Superuser, Teacher and Student. In the context of a school, the Superuser would likely be the headteacher, admin or IT department. For safeguarding reasons, they would be responsible for creating teachers and student profile, subjects, sets and enrolments. They are also responsible for resetting passwords if required.
+Users are divided into three main groups: Superusers, Teachers and Students. In the context of a school, the Superuser would likely be the headteacher, admin or IT department. For safeguarding reasons, they would be responsible for creating teachers and student profile, subjects, sets and enrolments. They are also responsible for resetting passwords if required.
 
-Needs of each user were defined as user stories and managed via GitHub Issues/Projects.
+Needs of each user were defined as user stories and managed via [GitHub Issues/Projects](https://github.com/users/alanjameschapman/projects/5).
 
 ## Scope
 
@@ -44,7 +44,7 @@ A review of [edublogs](https://edublogs.org/) which appears to be the dominant p
 
 ![user-flow](/docs/wireframes/user-flow.svg)
 
-The Entity Relationship Diagram (ERD) below shows how the database models will relate to each other.
+The Entity Relationship Diagram (ERD) below shows how the database models relate to each other.
 
 ![erd](/docs/erd/whiteboard_erd.png)
 
@@ -74,13 +74,13 @@ The user flow diagram helped to develop wireframes for each page using [Balsamiq
 
 #### Mobile wireframes
 
-The mobile layout was designed to be simple and easy to navigate. The home page would display the last 9 posts in a 1x9 grid, allowing the user to scroll vertically through the posts. The post detail page would display the full content of the post, and the post create and update pages would be similar in layout.
+The mobile layout was designed to be simple and easy to navigate. The home page displays the last 9 posts vertically, allowing the user to scroll through the posts. The post detail page displays the full content of the post, and the post create and update pages are similar in layout.
 
 ![wireframes](/docs/wireframes/wireframes-mobile.png)
 
 #### Tablet wireframes
 
-The main difference for the tablet layout was for the home page, where the posts were displayed in a 3x3 grid.
+The main difference for the tablet layout is for the home page, where the posts are displayed in a 3x3 grid.
 
 ![wireframes](/docs/wireframes/wireframes-tablet.png)
 
@@ -90,13 +90,15 @@ After assessing the wireframes, it was decided that the desktop would follow the
 
 ### Navigation Design
 
-Whilst developing these wireframes, it was concluded that site navigation would be best served by a navbar on each page, and that the home page would display the last 9 posts. The post detail page would display the full content of the post, and the post create and update pages would be similar in layout.
+Whilst developing these wireframes, it was concluded that site navigation would be best served by a navbar on each page, with the following links: home, logout and post creation (teachers only).
+
+Infinite scroll of blog posts was discounted because it tends to be used for aimless browsing - our users will be looking for specific content. Last 9 posts should be enough to show, but not too many to overwhelm the user.
 
 ## Surface
 
 ### Colour schemes
 
-The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image:
+The colour scheme is based on the default image placeholder, which may be prevalent if the blog author doesn't customize their post image.
 
 <img src="https://github.com/alanjameschapman/whiteboard/raw/main/static/images/default.jpg" alt="default image" width="500"/>
 
@@ -119,17 +121,13 @@ During development it was noted that it was easier to implementation dark blue a
 
 [iloveewp](https://www.ilovewp.com/resources/education/wordpress-for-schools/most-used-google-fonts-on-school-websites/) lists the "Most Used Google Fonts on School Websites". The top fonts were reviewed and Raleway was selected for its unique 'w' which would be used as the branding, navbar, footer and favicon to represent the 'w' in whiteboard:
 
-[fontjoy](https://fontjoy.com/) was used to find suitable pairing fonts. Martel Sans was chosen because it has serif and sans-serif variants for headings and paragraphs respectively. Sans-serif was chosen because serifs can be difficult to read on screens.
+[fontjoy](https://fontjoy.com/) was used to find suitable pairing fonts. Martel Sans was chosen because it has serif and sans-serif variants for headings and paragraphs respectively. Sans-serif was chosen for paragraph text because serifs can be difficult to read on screens.
 
 <img src="https://github.com/alanjameschapman/whiteboard/raw/main/docs/screenshots/fonts.png" alt="fonts" width="400"/>
 
 [favicon.io](https://favicon.io/favicon-generator/) was used to generate the favicon, based on the colour pallet.
 
 ![favicon](/docs/screenshots/favicon.png)
-
-### Navigation
-
-Infinite scroll of blog posts was discounted because it tends to be used for aimless browsing - our users will be looking for specific content. Last 9 posts should be enough to show, but not too many to overwhelm the user.
 
 # Features
 
@@ -244,7 +242,7 @@ The post detail screen displays the full content of the post. The user can comme
 
 ### Post Create (post_create.html)
 
-The post create screen allows the teacher to create a new post. The teacher can add a title, set, content and tags. The teacher can also save the post as a draft, or publish it immediately.
+The post create screen allows the teacher to create a new post. The teacher can add a title, set, subject and content. The teacher can also save the post as a draft, or publish it immediately.
 
 | Teacher |
 | :-: |
