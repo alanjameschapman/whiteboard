@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect, JsonResponse
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.template.defaultfilters import slugify
 from django.views import generic
@@ -260,3 +260,10 @@ def comment_approve(request, comment_id):
         return JsonResponse({'success': True})
     else:
         return HttpResponse('Invalid request method', status=405)
+
+
+def custom_404(request, exception):
+    """
+    Custom 404 error handler.
+    """
+    return render(request, 'custom_404.html', status=404)

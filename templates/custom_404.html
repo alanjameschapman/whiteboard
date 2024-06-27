@@ -1,0 +1,15 @@
+{% extends "base.html" %} {% block content %}
+{% comment %} 404 error page content {% endcomment %}
+<div class="container">
+  <div class="text-center">
+    <h1 class="body">404</h1>
+    <p class="body">
+      🤷🏻‍♂️ Uh-oh!
+    </p>
+    <p class="body">Page not found.</p>
+    <a href="{% url 'home' %}"
+      class="btn btn-signup">Go back home
+    </a>
+  </div>
+</div>
+{% endblock %}

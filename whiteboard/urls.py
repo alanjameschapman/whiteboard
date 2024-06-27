@@ -11,3 +11,5 @@ urlpatterns = [
     path('summernote/', include('django_summernote.urls')),
     path("", include("edblog.urls"), name="edblog-urls"),
 ]
+
+handler404 = 'edblog.views.custom_404'
