@@ -93,6 +93,9 @@
         {% else %}
         <p class="text-end m-3">You are not logged in</p>
         {% endif %}
+        {% if user.is_superuser %}
+        <p class="text-end m-3">Headteachers should access posts via the <a href="{% url 'admin:index' %}">admin panel.</a></p>
+        {% endif %}
 
         {% block content %}
         <!-- Content Goes here -->
