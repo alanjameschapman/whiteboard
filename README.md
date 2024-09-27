@@ -4,9 +4,13 @@ In the author's experience (as a former Science teacher) classrooms can be hecti
 
 'Whiteboard' is a learning platform for teachers to post lesson notes to help their students understanding for a given topic. Students can comment (ask questions) on any given post and teachers can respond.
 
-The website can only be accessed by registered users. For the purposes of this project, the site can be accessed using usernames student1, student2 and teacher1. Password is 'whiteboard' for all.
+---
 
-Please use GitHub's burger bun to navigate between sections.
+**IMPORTANT**
+
+**For the purposes of this project, the site can be accessed to see functionality using usernames student1, student2 and teacher1. Password is 'whiteboard' for all.**
+
+---
 
 # Agile Development
 
